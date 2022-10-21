@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(new ItemSelectedListener());
-
     }
 
     class ItemSelectedListener implements BottomNavigationView.OnItemSelectedListener {
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                     transaction.replace(R.id.frame_layout, fragmentTransportation).commitAllowingStateLoss();
                     break;
             }
-
             return true;
         }
     }

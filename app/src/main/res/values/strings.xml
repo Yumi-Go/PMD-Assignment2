@@ -5,7 +5,9 @@
     <string name="food">Food</string>
     <string name="entertainment">Entertainment</string>
     <string name="transportation">Transportation</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="nametextview">nameTextview</string>
+    <string name="categorytextview">categoryTextview</string>
+    <string name="districttextview">districtTextview</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
