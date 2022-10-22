@@ -9,6 +9,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_orange">#FFC107</color>
     <color name="dark_orange">#FF9800</color>
+    <color name="primary_color">#D5205D</color>
+    <color name="primary_variant_color">#780028</color>
+
+    <color name="unselected_tab">#EBEBEB</color>
+    <color name="selected_tab">#FFEEB8</color>
+
+
 
 
 </resources>

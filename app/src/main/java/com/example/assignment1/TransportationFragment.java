@@ -156,10 +156,11 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 
         MarkerOptions marker = new MarkerOptions();
         marker.position(current_LatLng);
-        marker.title("You");
+        marker.title("I'm here");
+        marker.snippet("Latitude: " + current_LatLng.latitude + " / Longitude: " + current_LatLng.longitude);
         marker.draggable(true);
         currentMarker = gMap.addMarker(marker);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(current_LatLng, 7);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(current_LatLng, 13);
         gMap.moveCamera(cameraUpdate);
 
     }
