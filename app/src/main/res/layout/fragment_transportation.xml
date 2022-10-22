@@ -1,47 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
     android:layout_height="match_parent"
     tools:context=".TransportationFragment">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/transportation_tab_layout"
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:id="@+id/bt_location"
+        android:text="Get Location"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/transportationTab1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/teal_200"
+        android:layout_marginTop="16dp"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/transportationTab2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_latitude"
+        android:text="0.0"
+        android:textSize="24sp"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/transportationTab3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/teal_200"
+        android:layout_marginTop="16dp"/>
 
-    </com.google.android.material.tabs.TabLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_longitude"
+        android:text="0.0"
+        android:textSize="24sp"/>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/transportationTabViewpager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transportation_tab_layout" />
+</LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/layout_store"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:gravity="center"-->
+<!--    android:orientation="vertical"-->
+<!--    tools:context=".TransportationFragment">-->
+
+<!--    <com.google.android.gms.maps.MapView-->
+<!--        android:id="@+id/map"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp" />-->
+
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:text="This is Map page"-->
+<!--        android:textColor="@android:color/black"-->
+<!--        android:textSize="50sp"/>-->
+
+<!--</LinearLayout>-->
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".TransportationFragment">-->
+
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/transportation_tab_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/transportationTab1"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/transportationTab2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/transportationTab3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--    </com.google.android.material.tabs.TabLayout>-->
+
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/transportationTabViewpager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/transportation_tab_layout" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
