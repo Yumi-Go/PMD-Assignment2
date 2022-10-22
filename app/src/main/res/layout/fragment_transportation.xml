@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:gravity="top|center_horizontal"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".TransportationFragment">
@@ -16,12 +16,39 @@
         tools:context=".TransportationFragment" />
 
     <Button
-        android:id="@+id/bt_location"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_my_location"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:text="Get Location" />
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="@string/my_location"
+        android:textColor="@color/white" />
 
-<!--    <TextView-->
+    <Button
+        android:id="@+id/btn_bus"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/dark_orange"
+        android:text="@string/bus"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_subway"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/dark_orange"
+        android:text="@string/subway"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_taxi"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/dark_orange"
+        android:text="@string/taxi"
+        android:textSize="20sp" />
+
+
+    <!--    <TextView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_marginTop="16dp"-->

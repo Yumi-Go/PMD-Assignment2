@@ -8,9 +8,13 @@
     <string name="nametextview">nameTextview</string>
     <string name="categorytextview">categoryTextview</string>
     <string name="districttextview">districtTextview</string>
-
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
+    <string name="my_location">Get My Location</string>
+    <string name="bus">Bus</string>
+    <string name="subway">Subway</string>
+    <string name="taxi">Taxi</string>
+
 
 
 
