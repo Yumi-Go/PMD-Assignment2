@@ -9,8 +9,6 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -21,6 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment1"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB4bPUsYTURJxno4-gXCFNDy2YRcodsJPU" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

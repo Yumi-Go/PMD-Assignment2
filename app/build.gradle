@@ -24,6 +24,7 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true
     }
 }
 
@@ -41,4 +42,5 @@ dependencies {
     implementation 'me.relex:circleindicator:2.1.6'
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.9'
 }

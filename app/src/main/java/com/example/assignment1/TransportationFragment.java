@@ -9,6 +9,8 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -48,12 +50,15 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class TransportationFragment extends Fragment {
+public class TransportationFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
+    MapView mapView = null;
+    Location currentLocation = null;
+    double currentLatitude = 0;
+    double currentLongitude = 0;
     Button btLocation;
     TextView tvLatitude, tvLongitude;
     FusedLocationProviderClient client;
-
 
 //    @Override
 //    public void onCreate(Bundle savedInstanceState) {
@@ -61,48 +66,66 @@ public class TransportationFragment extends Fragment {
 //    }
 
 
+    ActivityResultLauncher<String[]> locationPermissionRequest =
+            registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
+                Boolean fineLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false);
+                Boolean coarseLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION,false);
+                if (fineLocationGranted != null && fineLocationGranted) {
+                    getCurrentLocation();
+                } else if (coarseLocationGranted != null && coarseLocationGranted) {
+                    getCurrentLocation();
+                    Toast.makeText(getActivity(), "Only approximate location access granted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
+                }
+            });
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_transportation, container, false);
 
-// Assign variable
+        mapView = rootView.findViewById(R.id.map);
         btLocation = rootView.findViewById(R.id.bt_location);
         tvLatitude = rootView.findViewById(R.id.tv_latitude);
         tvLongitude = rootView.findViewById(R.id.tv_longitude);
 
-        // Initialize location client
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
+
         client = LocationServices.getFusedLocationProviderClient(getActivity());
 
-        btLocation.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(getActivity(),
-                        Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                        ContextCompat.checkSelfPermission(getActivity(),
-                        Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                    getCurrentLocation();
-                }
-                else {
-                    requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION,
-                                    Manifest.permission.ACCESS_COARSE_LOCATION }, 100);
-                }
-            }
+        btLocation.setOnClickListener(view -> {
+            locationPermissionRequest.launch(new String[] {
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+            });
+//            if (ContextCompat.checkSelfPermission(getActivity(),
+//                    Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+//                    ContextCompat.checkSelfPermission(getActivity(),
+//                    Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+//                getCurrentLocation();
+//            }
+//            else {
+//                requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION,
+//                                Manifest.permission.ACCESS_COARSE_LOCATION }, 100);
+//            }
         });
         return rootView;
     }
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 100 && (grantResults.length > 0) &&
-                (grantResults[0] + grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
-            getCurrentLocation();
-        }
-        else {
-            Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (requestCode == 100 && (grantResults.length > 0) &&
+//                (grantResults[0] + grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
+//            getCurrentLocation();
+//        }
+//        else {
+//            Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     @SuppressLint("MissingPermission")
     private void getCurrentLocation() {
@@ -123,9 +146,13 @@ public class TransportationFragment extends Fragment {
                         LocationCallback locationCallback = new LocationCallback() {
                             @Override
                             public void onLocationResult(LocationResult locationResult) {
-                                Location location1 = locationResult.getLastLocation();
-                                tvLatitude.setText(String.valueOf(location1.getLatitude()));
-                                tvLongitude.setText(String.valueOf(location1.getLongitude()));
+                                currentLocation = locationResult.getLastLocation();
+                                if (currentLocation != null) {
+                                    currentLatitude = currentLocation.getLatitude();
+                                    currentLongitude = currentLocation.getLongitude();
+                                    tvLatitude.setText(String.valueOf(currentLatitude));
+                                    tvLongitude.setText(String.valueOf(currentLongitude));
+                                }
                             }
                         };
                         client.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
@@ -135,6 +162,25 @@ public class TransportationFragment extends Fragment {
         } else {
             startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        LatLng DEFAULT_LOCATION = new LatLng(37.5665, 126.9780);
+
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(DEFAULT_LOCATION);
+        marker.title("SEOUL");
+        marker.snippet("South Korea");
+
+        Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
+        googleMap.setOnInfoWindowClickListener(this);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 10));
+    }
+
+    @Override
+    public void onInfoWindowClick(@NonNull Marker marker) {
+
     }
 }
 
