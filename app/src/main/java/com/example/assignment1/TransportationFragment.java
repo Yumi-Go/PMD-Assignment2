@@ -76,10 +76,8 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                 Boolean coarseLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION,false);
                 if (fineLocationGranted != null && fineLocationGranted) {
                     getCurrentLocation();
-//                    updateLocation();
                 } else if (coarseLocationGranted != null && coarseLocationGranted) {
                     getCurrentLocation();
-//                    updateLocation();
                     Toast.makeText(getActivity(), "Only approximate location access granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
@@ -96,21 +94,23 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
         tvLatitude = rootView.findViewById(R.id.tv_latitude);
         tvLongitude = rootView.findViewById(R.id.tv_longitude);
 
-        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-
-
 //        mapView.onCreate(savedInstanceState);
 //        mapView.getMapAsync(this);
 
         client = LocationServices.getFusedLocationProviderClient(getActivity());
 
+
+        locationPermissionRequest.launch(new String[] {
+                Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION});
+
         btLocation.setOnClickListener(view -> {
-            locationPermissionRequest.launch(new String[] {
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-            });
+            getCurrentLocation();
+        });
+
+
+        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
 //            if (ContextCompat.checkSelfPermission(getActivity(),
 //                    Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
@@ -122,7 +122,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 //                requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION,
 //                                Manifest.permission.ACCESS_COARSE_LOCATION }, 100);
 //            }
-        });
+//        });
         return rootView;
     }
 
@@ -166,6 +166,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                                     tvLatitude.setText(String.valueOf(currentLatitude));
                                     tvLongitude.setText(String.valueOf(currentLongitude));
                                 }
+
                             }
                         };
                         client.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
@@ -178,7 +179,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
     }
 
     @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
+    public void onMapReady(GoogleMap googleMap) {
         gMap = googleMap;
         LatLng DEFAULT_LatLng = new LatLng(37.5665, 126.9780);
 
@@ -188,8 +189,14 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
         marker.snippet("South Korea");
 
         Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
-        googleMap.setOnInfoWindowClickListener(this);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(DEFAULT_LatLng, 5));
+        gMap.setOnInfoWindowClickListener(this);
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(DEFAULT_LatLng, 5));
+
+        double defaultLatitude = DEFAULT_LatLng.latitude;
+        double defaultLongitude = DEFAULT_LatLng.longitude;
+        tvLatitude.setText(String.valueOf(defaultLatitude));
+        tvLongitude.setText(String.valueOf(defaultLongitude));
+
     }
 
 
