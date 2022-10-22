@@ -44,13 +44,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         String TAG = "Food_Tab1Adapter";
-        Log.d(TAG, "태그 onCreateViewHolder 들어옴");
         if (context == null) {
             context = parent.getContext();
         }
         View view = LayoutInflater.from(context).inflate(R.layout.cardview_items, parent, false);
-//        View view = LayoutInflater.from(parent.getContext()).inflate(
-//                R.layout.cardview_items, parent,false);
         return new ViewHolder(view);
     }
 
