@@ -9,10 +9,18 @@
     android:layout_height="match_parent"
     tools:context=".TransportationFragment">
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/map"
+    <fragment
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="300dp"
+        android:id="@+id/map"
+        tools:context=".TransportationFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+
+<!--    <com.google.android.gms.maps.MapView-->
+<!--        android:id="@+id/map"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp" />-->
 
     <Button
         android:layout_width="wrap_content"

@@ -31,6 +31,7 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -52,10 +53,13 @@ import java.util.Objects;
 
 public class TransportationFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
-    MapView mapView = null;
+    GoogleMap gMap;
+    private Marker currentMarker = null;
+//    MapView mapView = null;
     Location currentLocation = null;
     double currentLatitude = 0;
     double currentLongitude = 0;
+
     Button btLocation;
     TextView tvLatitude, tvLongitude;
     FusedLocationProviderClient client;
@@ -72,8 +76,10 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                 Boolean coarseLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION,false);
                 if (fineLocationGranted != null && fineLocationGranted) {
                     getCurrentLocation();
+//                    updateLocation();
                 } else if (coarseLocationGranted != null && coarseLocationGranted) {
                     getCurrentLocation();
+//                    updateLocation();
                     Toast.makeText(getActivity(), "Only approximate location access granted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
@@ -85,13 +91,18 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                              ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_transportation, container, false);
 
-        mapView = rootView.findViewById(R.id.map);
+//        mapView = rootView.findViewById(R.id.map);
         btLocation = rootView.findViewById(R.id.bt_location);
         tvLatitude = rootView.findViewById(R.id.tv_latitude);
         tvLongitude = rootView.findViewById(R.id.tv_longitude);
 
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(this);
+        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+
+//        mapView.onCreate(savedInstanceState);
+//        mapView.getMapAsync(this);
 
         client = LocationServices.getFusedLocationProviderClient(getActivity());
 
@@ -100,6 +111,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                     Manifest.permission.ACCESS_FINE_LOCATION,
                     Manifest.permission.ACCESS_COARSE_LOCATION
             });
+
 //            if (ContextCompat.checkSelfPermission(getActivity(),
 //                    Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
 //                    ContextCompat.checkSelfPermission(getActivity(),
@@ -150,6 +162,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                                 if (currentLocation != null) {
                                     currentLatitude = currentLocation.getLatitude();
                                     currentLongitude = currentLocation.getLongitude();
+                                    updateLocation(currentLocation);
                                     tvLatitude.setText(String.valueOf(currentLatitude));
                                     tvLongitude.setText(String.valueOf(currentLongitude));
                                 }
@@ -166,17 +179,41 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
-        LatLng DEFAULT_LOCATION = new LatLng(37.5665, 126.9780);
+        gMap = googleMap;
+        LatLng DEFAULT_LatLng = new LatLng(37.5665, 126.9780);
 
         MarkerOptions marker = new MarkerOptions();
-        marker.position(DEFAULT_LOCATION);
+        marker.position(DEFAULT_LatLng);
         marker.title("SEOUL");
         marker.snippet("South Korea");
 
         Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
         googleMap.setOnInfoWindowClickListener(this);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(DEFAULT_LOCATION, 10));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(DEFAULT_LatLng, 5));
     }
+
+
+    public void updateLocation(Location location) {
+        if (currentMarker != null) currentMarker.remove();
+        LatLng current_LatLng = new LatLng(location.getLatitude(), location.getLongitude());
+
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(current_LatLng);
+        marker.title("You");
+        marker.draggable(true);
+
+        currentMarker = gMap.addMarker(marker);
+
+
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(current_LatLng);
+        gMap.moveCamera(cameraUpdate);
+
+
+//        Objects.requireNonNull(gMap.addMarker(marker)).showInfoWindow();
+//        gMap.setOnInfoWindowClickListener(this);
+//        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current_LatLng, 5));
+    }
+
 
     @Override
     public void onInfoWindowClick(@NonNull Marker marker) {
