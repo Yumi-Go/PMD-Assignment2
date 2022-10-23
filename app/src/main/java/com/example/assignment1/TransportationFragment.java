@@ -2,10 +2,12 @@ package com.example.assignment1;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -46,8 +48,9 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
     Location currentLocation = null;
     double currentLatitude = 0;
     double currentLongitude = 0;
+//    String uri_string = "";
 
-    Button btLocation;
+    Button btnLocation, btnBus, btnSubway, btnTaxi;
 //    TextView tvLatitude, tvLongitude;
     FusedLocationProviderClient client;
 
@@ -58,7 +61,11 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                              ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_transportation, container, false);
 
-        btLocation = rootView.findViewById(R.id.btn_my_location);
+        btnLocation = rootView.findViewById(R.id.btn_my_location);
+        btnBus = rootView.findViewById(R.id.btn_bus);
+        btnSubway = rootView.findViewById(R.id.btn_subway);
+        btnTaxi = rootView.findViewById(R.id.btn_taxi);
+
 //        tvLatitude = rootView.findViewById(R.id.tv_latitude);
 //        tvLongitude = rootView.findViewById(R.id.tv_longitude);
         client = LocationServices.getFusedLocationProviderClient(getActivity());
@@ -81,10 +88,36 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 
         locationPermissionRequest.launch(new String[] {
                 Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION});
-        btLocation.setOnClickListener(view -> {getCurrentLocation();});
+        btnLocation.setOnClickListener(view -> {getCurrentLocation();});
 
         SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        btnBus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getCurrentLocation();
+                Uri geouri = Uri.parse(String.format("geo:%f,%f", currentLatitude, currentLongitude));
+                Intent geomap = new Intent(Intent.ACTION_VIEW, geouri);
+                geomap.setPackage("com.google.android.apps.maps");  // 구글맵으로 열기
+                try {
+                    startActivity(geomap);
+                } catch (ActivityNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+////                String uri_string = "geo: " + currentLatitude + ", " + currentLongitude;
+//                Uri location = Uri.parse(uri_string);
+//                Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+//                mapIntent.setPackage("com.google.android.apps.maps");
+//                try {
+//                    startActivity(mapIntent);
+//                } catch (ActivityNotFoundException e) {
+//                    e.printStackTrace();
+//                }
+            }
+        });
+
 
         return rootView;
     }
@@ -114,6 +147,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                                     currentLatitude = currentLocation.getLatitude();
                                     currentLongitude = currentLocation.getLongitude();
                                     updateLocation(currentLocation);
+//                                    uri_string = "\"geo: " + currentLatitude + ", " + currentLongitude + "\"";
 //                                    tvLatitude.setText(String.valueOf(currentLatitude));
 //                                    tvLongitude.setText(String.valueOf(currentLongitude));
                                 }
@@ -162,6 +196,9 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
         currentMarker = gMap.addMarker(marker);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(current_LatLng, 13);
         gMap.moveCamera(cameraUpdate);
+
+        currentLatitude = current_LatLng.latitude;
+        currentLongitude = current_LatLng.longitude;
 
     }
 

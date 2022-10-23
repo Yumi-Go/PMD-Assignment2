@@ -4,8 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF9EB"
     tools:context=".HomeFragment">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/city_name"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/homeViewpagerSlider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/homeViewpagerSlider"
@@ -26,19 +41,33 @@
         app:layout_constraintEnd_toEndOf="@+id/homeViewpagerSlider"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/city_name"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/homeViewpagerSlider"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474" />
+        app:layout_constraintVertical_bias="0.904">
+
+
+        <TextView
+            android:id="@+id/cardview_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:lineSpacingExtra="10sp"
+            android:text="@string/home_cardview_text"
+            android:textAlignment="viewStart"
+            android:textSize="16sp" />
+
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

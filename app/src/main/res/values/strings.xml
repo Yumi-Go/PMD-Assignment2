@@ -2,6 +2,8 @@
     <string name="app_name">Assignment1</string>
     <string name="city_name">Seoul</string>
     <string name="home">Home</string>
+    <string name="home_cardview_text">* Country: South Korea\n* Area: Total	605.21 km2 (233.67 sq mi)
+Population(2021): 9,765,869\n* Density: 16,000/km2 (42,000/sq mi)\n* Website: http://www.seoul.go.kr</string>
     <string name="food">Food</string>
     <string name="entertainment">Entertainment</string>
     <string name="transportation">Transportation</string>
@@ -10,7 +12,7 @@
     <string name="districttextview">districtTextview</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
-    <string name="my_location">Get My Location</string>
+    <string name="my_location">Reset Center to My Current Location</string>
     <string name="bus">Bus</string>
     <string name="subway">Subway</string>
     <string name="taxi">Taxi</string>
