@@ -2,8 +2,13 @@
     <string name="app_name">Assignment1</string>
     <string name="city_name">Seoul</string>
     <string name="home">Home</string>
-    <string name="home_cardview_text">* Country: South Korea\n* Area: Total	605.21 km2 (233.67 sq mi)
-Population(2021): 9,765,869\n* Density: 16,000/km2 (42,000/sq mi)\n* Website: http://www.seoul.go.kr</string>
+    <string name="home_cardview_text">
+        * Country: South Korea\n
+        * Area: Total	605.21 km2 (233.67 sq mi)\n
+        * Population(2021): 9,765,869\n
+        * Density: 16,000/km2 (42,000/sq mi)\n
+        * Website: http://www.seoul.go.kr
+    </string>
     <string name="food">Food</string>
     <string name="entertainment">Entertainment</string>
     <string name="transportation">Transportation</string>
@@ -12,14 +17,48 @@ Population(2021): 9,765,869\n* Density: 16,000/km2 (42,000/sq mi)\n* Website: ht
     <string name="districttextview">districtTextview</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
-    <string name="my_location">Reset Center to My Current Location</string>
+    <string name="reset_marker">Reset Center to My Location</string>
+    <string name="google_map">Open my location</string>
     <string name="bus">Bus</string>
     <string name="subway">Subway</string>
     <string name="taxi">Taxi</string>
+    <string name="bus_title1">Regional Buses</string>
+    <string name="bus_content1">
+        # Yellow Bus : 1st number (Area where bus is operating) / 2nd number (serial number (1~))\n
+        # Blue Bus : 2nd number (Departure area) / 2nd number (Arrival area) / 3rd number (serial number (0~))\n
+        # Green Bus : 1st number (Departure area) / 2nd number (Arrival area) / 3rd number (serial number (11~))\n
+        # Red Bus : : 1st number (9) / 2nd number (Departure area) / 3rd number (serial number (00~))\n
+        # Customized Bus : 1st number (8) / 2nd number (Departure area) / 3rd number (Arrival area) / 4th number (serial number (0~))\n
+        # Airport Bus : 1st number (6 (0~7)) / Third Number (serial number (00~))\n
+        # Midnight Bus : 1st number (N) / 2nd number (Departure area) / 3rd number (Arrival area)
+    </string>
 
+    <string name="bus_title2">Seoul Bus Numbers</string>
+    <string name="bus_content2">
+        # 0 area (Major Districts : Jung-gu, Jongno-gu, Yongsan-gu / Extension Line : none)\n
+        # 1st area (Major Districts : Seongbuk-gu, Gangbuk-gu, Dobong-gu, Nowon-gu / Extension Line : Gyeonggi-do Yangju-si, Uijeongbu-si, Dongducheon-si, Pocheon-si)\n
+        # 2nd area (Major Districts : Seongdong-gu, Gwangjin-gu, Dongdaemun-gu, Jungnang-gu / Extension Line : Gyeonggi-do Guri-si, Namyangju-si, Gapyeong-gun, Yangpyeong-gun)\n
+        # 3rd area (Major Districts : Songpa-gu, Gangdong-gu / Extension Line : Gyeonggi-do Gwangju-si, Hanam-si, Icheon-si, Yeoju-si)\n
+        # 4th area (Major Districts :Seocho-gu, Gangnam-gu / Extension Line : Gyeonggi-do Seongnam-si, Yongin-si, Anseong-si)\n
+        # 5th area (Major Districts : Geumcheon-gu, Dongjak-gu, Gwanak-gu / Extention Line : Gyeonggi-do Anyang-si, Gunpo-si, Uiwang-si, Ansan-si, Gwacheon-si, Suwon-si, Hwaseong-si, Osan-si, Pyeongtaek-si)\n
+        # 6th area (Major Districts : Yangcheon-gu, Gangseo-gu, Guro-gu, Yeongdeungpo-gu / Extension Line : Incheon Metropolitan City, Gyeonggi-do Gimpo-si, Bucheon-si, Gwangmyeong-si, Siheung-si)\n
+        # 7th area (Major Districts : Eunpyeong-gu, Seodaemun-gu, Mapo-gu / Extension Line : Gyeonggi-do  Goyang-si, Paju-si, Yeoncheon-gun)
+    </string>
 
+    <string name="bus_title3">Fare &amp; Transfer System</string>
+    <string name="bus_content3">
+        # Fares can be paid with cash or transportation card for a flat rate each time you board\n
+        # Fares for Seoul city buses and Maeul (Village) buses can be paid with T-money, U-Pass, EB Card, Cashbee, and Korail Membership Cards. Deferred payment transportation cards, which are compatible with T-Money and U-Pass, can be used as well.\n
+        # Seoul city buses are free for a maximum of 3 children under the age of 6 if they are accompanied by a guardian. Legal free riders who are defined in the Passenger Transport Service Act of Korea are also able to ride for free.\n
+        # Seoul, Gyeonggi Province (Gyeonggi-do), Incheon buses and metropolitan subways are under the Metropolitan Integrated Fare System, so they charge a basic fare for distances up to 10 km. Using Seoul metropolitan buses, Gyeonggi Province general buses, non-stop deluxe buses, Incheon buses, and red buses for no more than one transfer will cost the basic fare up to 30 km, and an extra KRW 100 for each additional 5 km (for adults).\n
+        # Multiple passengers on one card and transfer discounts are available only on city buses, and only if those passengers are traveling to the same destination.
+    </string>
 
-
+    <string name="bus_title4">T-money Card</string>
+    <string name="bus_content4">
+        # T-money is a transport card issued by Korea Smart Card. It can be used as a transport card and e-currency. It is commonly used in the metropolitan area, along with Cashbee.\n
+        # T-money transport cards come in two types: a common T-money card and a Smart T-money card. Smart T-money cards are sold in various forms, such as key rings and cell phone rings. All T-money cards can be recharged at subway stations and convenience stores.
+    </string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

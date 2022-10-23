@@ -41,7 +41,8 @@ public class HomeFragment extends Fragment {
         sliderItems.add(new Home_ViewPagerSliderItems(R.drawable.image1));
         sliderItems.add(new Home_ViewPagerSliderItems(R.drawable.image2));
         sliderItems.add(new Home_ViewPagerSliderItems(R.drawable.image3));
-
+        sliderItems.add(new Home_ViewPagerSliderItems(R.drawable.image4));
+        sliderItems.add(new Home_ViewPagerSliderItems(R.drawable.image5));
 
         adapter = new Home_ViewPagerSliderAdapter(sliderItems, viewPager);
         viewPager.setAdapter(adapter);

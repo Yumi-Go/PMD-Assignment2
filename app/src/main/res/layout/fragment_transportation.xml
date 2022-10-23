@@ -16,12 +16,21 @@
         tools:context=".TransportationFragment" />
 
     <Button
-        android:id="@+id/btn_my_location"
-        android:layout_width="379dp"
+        android:id="@+id/btn_reset_marker"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_red_dark"
-        android:text="@string/my_location"
+        android:text="@string/reset_marker"
         android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btn_googleMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="@string/google_map"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/btn_bus"

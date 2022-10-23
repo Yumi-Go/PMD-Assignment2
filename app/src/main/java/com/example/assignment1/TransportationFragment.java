@@ -14,6 +14,8 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Looper;
 import android.provider.Settings;
@@ -50,7 +52,8 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
     double currentLongitude = 0;
 //    String uri_string = "";
 
-    Button btnLocation, btnBus, btnSubway, btnTaxi;
+
+    Button btnReset, btnGmap, btnBus, btnSubway, btnTaxi;
 //    TextView tvLatitude, tvLongitude;
     FusedLocationProviderClient client;
 
@@ -61,7 +64,8 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                              ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_transportation, container, false);
 
-        btnLocation = rootView.findViewById(R.id.btn_my_location);
+        btnReset = rootView.findViewById(R.id.btn_reset_marker);
+        btnGmap = rootView.findViewById(R.id.btn_googleMap);
         btnBus = rootView.findViewById(R.id.btn_bus);
         btnSubway = rootView.findViewById(R.id.btn_subway);
         btnTaxi = rootView.findViewById(R.id.btn_taxi);
@@ -88,12 +92,12 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 
         locationPermissionRequest.launch(new String[] {
                 Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION});
-        btnLocation.setOnClickListener(view -> {getCurrentLocation();});
+        btnReset.setOnClickListener(view -> {getCurrentLocation();});
 
         SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        btnBus.setOnClickListener(new View.OnClickListener() {
+        btnGmap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getCurrentLocation();
@@ -115,6 +119,34 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 //                } catch (ActivityNotFoundException e) {
 //                    e.printStackTrace();
 //                }
+            }
+        });
+
+        btnBus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                Transportation_Bus fragmentBus = new Transportation_Bus();
+                transaction.replace(R.id.frame_layout, fragmentBus).commitAllowingStateLoss();
+            }
+        });
+
+        btnSubway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                Transportation_Subway fragmentSubway = new Transportation_Subway();
+                transaction.replace(R.id.frame_layout, fragmentSubway).commitAllowingStateLoss();
+            }
+        });
+
+        btnTaxi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Transportation_Taxi fragmentTaxi = new Transportation_Taxi();
+//                transaction.replace(R.id.frame_layout, fragmentTaxi).commitAllowingStateLoss();
             }
         });
 
