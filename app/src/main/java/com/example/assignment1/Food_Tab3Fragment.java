@@ -16,7 +16,7 @@ import java.util.List;
 public class Food_Tab3Fragment extends Fragment {
 
     RecyclerView recyclerView;
-    List<Food_RecyclerItem> itemsList = new ArrayList<>();
+    List<RecyclerItem> itemsList = new ArrayList<>();
 
 
 
@@ -46,14 +46,14 @@ public class Food_Tab3Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new Food_RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new Food_RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
-        itemsList.add(new Food_RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new Food_RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
-        itemsList.add(new Food_RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new Food_RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
-        itemsList.add(new Food_RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new Food_RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
     }
 
 

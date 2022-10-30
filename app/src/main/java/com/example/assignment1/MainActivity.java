@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int num_page = 4;
 
-    private FragmentManager fragmentManager = getSupportFragmentManager();
+    private final FragmentManager fragmentManager = getSupportFragmentManager();
     private HomeFragment fragmentHome = new HomeFragment();
     private FoodFragment fragmentFood = new FoodFragment();
     private EntertainmentFragment fragmentEntertainment = new EntertainmentFragment();

@@ -16,7 +16,7 @@ import java.util.List;
 public class Food_Tab1Fragment extends Fragment {
 
     RecyclerView recyclerView;
-    List<Food_RecyclerItem> itemsList = new ArrayList<>();
+    List<RecyclerItem> itemsList = new ArrayList<>();
 
 
 
@@ -46,14 +46,14 @@ public class Food_Tab1Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new Food_RecyclerItem("Korean", "Hwangsaengga", "Jongno-gu", R.drawable.food_hwangsaengga));
-        itemsList.add(new Food_RecyclerItem("Korean", "Wooraeok", "Jung-gu", R.drawable.food_wooraeok));
-        itemsList.add(new Food_RecyclerItem("Asian","Tuk Tuk Noodle Thai","Mapo-gu", R.drawable.food_tuktuk_noodle_thai));
-        itemsList.add(new Food_RecyclerItem("Western","Charles H","Jongno-gu", R.drawable.food_charles_h));
-        itemsList.add(new Food_RecyclerItem("Fusion","Bar Cham","Jongno-gu", R.drawable.food_bar_cham));
-        itemsList.add(new Food_RecyclerItem("Asian","Kojima","Gangnam-gu", R.drawable.food_kojima));
-        itemsList.add(new Food_RecyclerItem("Fusion","Bawi Pasta Bar","Yongsan-gu", R.drawable.food_bawi_pasta_bar));
-        itemsList.add(new Food_RecyclerItem("Vegan","Maison Jo","Seocho-gu", R.drawable.food_maison_jo));
+        itemsList.add(new RecyclerItem("Korean", "Hwangsaengga", "Jongno-gu", R.drawable.food_hwangsaengga));
+        itemsList.add(new RecyclerItem("Korean", "Wooraeok", "Jung-gu", R.drawable.food_wooraeok));
+        itemsList.add(new RecyclerItem("Asian","Tuk Tuk Noodle Thai","Mapo-gu", R.drawable.food_tuktuk_noodle_thai));
+        itemsList.add(new RecyclerItem("Western","Charles H","Jongno-gu", R.drawable.food_charles_h));
+        itemsList.add(new RecyclerItem("Fusion","Bar Cham","Jongno-gu", R.drawable.food_bar_cham));
+        itemsList.add(new RecyclerItem("Asian","Kojima","Gangnam-gu", R.drawable.food_kojima));
+        itemsList.add(new RecyclerItem("Fusion","Bawi Pasta Bar","Yongsan-gu", R.drawable.food_bawi_pasta_bar));
+        itemsList.add(new RecyclerItem("Vegan","Maison Jo","Seocho-gu", R.drawable.food_maison_jo));
     }
 
 }
