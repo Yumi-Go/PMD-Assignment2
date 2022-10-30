@@ -16,7 +16,7 @@ import java.util.List;
 public class Food_Tab2Fragment extends Fragment {
 
     RecyclerView recyclerView;
-    List<Food_Tab1RecyclerItem> itemsList = new ArrayList<>();
+    List<Food_RecyclerItem> itemsList = new ArrayList<>();
 
 
 
@@ -46,17 +46,13 @@ public class Food_Tab2Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new Food_Tab1RecyclerItem("Coffee", "aaa", "district1", R.drawable.image1));
-        itemsList.add(new Food_Tab1RecyclerItem("Coffee", "bbb", "district2", R.drawable.image2));
-        itemsList.add(new Food_Tab1RecyclerItem("Coffee","ccc","district3", R.drawable.image3));
-        itemsList.add(new Food_Tab1RecyclerItem("Coffee","ddd","district4", R.drawable.image1));
-        itemsList.add(new Food_Tab1RecyclerItem("Coffee","eee","district5", R.drawable.image2));
-        itemsList.add(new Food_Tab1RecyclerItem("Coffee","fff","district6", R.drawable.image3));
-        itemsList.add(new Food_Tab1RecyclerItem("Restaurant","ggg","district7", R.drawable.image1));
-        itemsList.add(new Food_Tab1RecyclerItem("Restaurant","hhh","district8", R.drawable.image2));
-        itemsList.add(new Food_Tab1RecyclerItem("Restaurant","iii","district9", R.drawable.image3));
-        itemsList.add(new Food_Tab1RecyclerItem("Restaurant","jjj","district10", R.drawable.image1));
-        itemsList.add(new Food_Tab1RecyclerItem("Restaurant","kkk","district11", R.drawable.image2));
+        itemsList.add(new Food_RecyclerItem("Cafe", "Coffee Libre", "Mapo-gu", R.drawable.food_coffee_libre));
+        itemsList.add(new Food_RecyclerItem("Cafe", "Fritz Coffee Company", "Mapo-gu", R.drawable.food_fritz_coffee_company));
+        itemsList.add(new Food_RecyclerItem("Bakery","Tartine Bakery Dosan","Gangnam-gu", R.drawable.food_tartine_bakery_dosan));
+        itemsList.add(new Food_RecyclerItem("Bakery","Maison M'O","Seocho-hu", R.drawable.food_maison_mo));
+        itemsList.add(new Food_RecyclerItem("Dessert","Old Ferry Donut","Yongsan-gu", R.drawable.food_old_ferry_donut));
+        itemsList.add(new Food_RecyclerItem("Cafe","Pont Cafe","Yongsan-gu", R.drawable.food_pont_cafe));
+
     }
 
 }

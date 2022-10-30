@@ -21,7 +21,7 @@
             android:id="@+id/iv_photo"
             android:src="@mipmap/ic_launcher"
             android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:scaleType="fitXY"
             android:contentDescription="TODO" />
 
@@ -29,29 +29,30 @@
             android:id="@+id/item1_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/categorytextview"
             android:layout_margin="0dp"
             android:gravity="center_horizontal"
-            android:textSize="16sp" />
+            android:text="@string/categorytextview"
+            android:textSize="14sp" />
 
 
         <TextView
             android:id="@+id/item2_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nametextview"
             android:layout_margin="0dp"
             android:gravity="center_horizontal"
+            android:text="@string/nametextview"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/item3_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/districttextview"
             android:layout_margin="0dp"
             android:gravity="center_horizontal"
-            android:textSize="16sp" />
+            android:text="@string/districttextview"
+            android:textSize="14sp" />
 
     </LinearLayout>
 

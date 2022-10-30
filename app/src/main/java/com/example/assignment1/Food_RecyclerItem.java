@@ -1,11 +1,11 @@
 package com.example.assignment1;
 
-public class Food_Tab1RecyclerItem {
+public class Food_RecyclerItem {
 
     String category, name, district;
     int image;
 
-    public Food_Tab1RecyclerItem(String category, String name, String district, int image) {
+    public Food_RecyclerItem(String category, String name, String district, int image) {
         this.category = category;
         this.name = name;
         this.district = district;

@@ -1,7 +1,6 @@
 package com.example.assignment1;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,9 @@ import java.util.List;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     Context context;
-    List<Food_Tab1RecyclerItem> itemArrayList;
+    List<Food_RecyclerItem> itemArrayList;
 
-    public RecyclerAdapter(List<Food_Tab1RecyclerItem> itemArrayList) {
+    public RecyclerAdapter(List<Food_RecyclerItem> itemArrayList) {
         this.itemArrayList = itemArrayList;
     }
 
@@ -53,7 +52,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Food_Tab1RecyclerItem item = itemArrayList.get(position);
+        Food_RecyclerItem item = itemArrayList.get(position);
         holder.categoryTextview.setText(item.getCategory());
         holder.nameTextview.setText(item.getName());
         holder.districtTextview.setText(item.getDistrict());

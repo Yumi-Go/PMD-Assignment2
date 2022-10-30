@@ -47,8 +47,8 @@ public class FoodFragment extends Fragment {
 
         tabTitles = new ArrayList<>();
         tabTitles.add("Restaurant");
-        tabTitles.add("Cafe");
-        tabTitles.add("Pub");
+        tabTitles.add("Cafe & Bakery");
+        tabTitles.add("Pub & Bar");
 
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText(tabTitles.get(position))).attach();
