@@ -13,6 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FoodFragment extends Fragment {
@@ -21,6 +22,7 @@ public class FoodFragment extends Fragment {
     ViewPager2 viewPager;
     TabPagerAdapter adapter;
     ArrayList<String> tabTitles;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -84,13 +84,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     String image = Integer.toString(item.getImage());
 
                     Bundle bundle = new Bundle();
-                    bundle.putString("category", category);
+//                    bundle.putString("category", category);
                     bundle.putString("name", name);
-                    bundle.putString("district", district);
-                    bundle.putString("address", address);
-                    bundle.putString("latitude", latitude);
-                    bundle.putString("longitude", longitude);
-                    bundle.putString("image", image);
+//                    bundle.putString("district", district);
+//                    bundle.putString("address", address);
+//                    bundle.putString("latitude", latitude);
+//                    bundle.putString("longitude", longitude);
+//                    bundle.putString("image", image);
                     fragmentCardViewItem.setArguments(bundle);
 
 

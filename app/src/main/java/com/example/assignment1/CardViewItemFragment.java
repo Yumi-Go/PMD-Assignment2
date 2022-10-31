@@ -26,12 +26,12 @@ import java.util.Objects;
 
 public class CardViewItemFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
-    String category, name, district, address;
+    String category, name, district, address, description;
     double latitude, longitude;
     int image;
 
     ImageView introImageView;
-    TextView nameTextView,categoryTextView, introTextView, addressTextView;
+    TextView nameTextView,categoryTextView, descriptionTextView, addressTextView;
 
     GoogleMap gMap;
     private Marker currentMarker = null;
@@ -54,23 +54,27 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_card_view_item, container, false);
 
         if (getArguments() != null) {
-            category = getArguments().getString("category");
+//            category = getArguments().getString("category");
             name = getArguments().getString("name");
-            district = getArguments().getString("district");
-            address = getArguments().getString("address");
-            latitude = Double.parseDouble(getArguments().getString("latitude"));
-            longitude = Double.parseDouble(getArguments().getString("longitude"));
-            image = Integer.parseInt(getArguments().getString("image"));
+//            district = getArguments().getString("district");
+//            address = getArguments().getString("address");
+//            latitude = Double.parseDouble(getArguments().getString("latitude"));
+//            longitude = Double.parseDouble(getArguments().getString("longitude"));
+//            description = getArguments().getString("description");
+//            image = Integer.parseInt(getArguments().getString("image"));
+            if
+
+
 
             categoryTextView = rootView.findViewById(R.id.categoryTv);
             nameTextView = rootView.findViewById(R.id.nameTv);
-            introTextView = rootView.findViewById(R.id.descriptionTv);
+            descriptionTextView = rootView.findViewById(R.id.descriptionTv);
             addressTextView = rootView.findViewById(R.id.addressTv);
             introImageView = rootView.findViewById(R.id.introIv);
 
             categoryTextView.setText(category);
             nameTextView.setText(name);
-            introTextView.setText(""); // 여기 채우기!!!!!! String.xml에서 문장넣어서 해보면 될듯
+            descriptionTextView.setText(getString(R.string.food_wooraeok_description));
             addressTextView.setText(address);
             introImageView.setImageResource(image);
 

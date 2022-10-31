@@ -16,7 +16,7 @@ import java.util.List;
 public class Food_Tab1Fragment extends Fragment {
 
     RecyclerView recyclerView;
-    List<RecyclerItem> itemsList = new ArrayList<>();
+//    static List<RecyclerItem> itemsList = new ArrayList<>();
 
 
 
@@ -41,19 +41,19 @@ public class Food_Tab1Fragment extends Fragment {
     private void initView() {
         GridLayoutManager layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter(itemsList);
+        RecyclerAdapter adapter = new RecyclerAdapter(MainActivity.itemsList);
         recyclerView.setAdapter(adapter);
     }
 
     private void initItems() {
-        itemsList.add(new RecyclerItem("Korean", "Hwangsaengga", "Jongno-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_hwangsaengga));
-        itemsList.add(new RecyclerItem("Korean", "Wooraeok", "Jung-gu", "62-29 Changgyeonggung-ro, Jung-gu, Seoul, South Korea", 37.5682471, 126.9978173, "", R.drawable.food_wooraeok));
-        itemsList.add(new RecyclerItem("Asian","Tuk Tuk Noodle Thai","Mapo-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_tuktuk_noodle_thai));
-        itemsList.add(new RecyclerItem("Western","Charles H","Jongno-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_charles_h));
-        itemsList.add(new RecyclerItem("Fusion","Bar Cham","Jongno-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_bar_cham));
-        itemsList.add(new RecyclerItem("Asian","Kojima","Gangnam-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_kojima));
-        itemsList.add(new RecyclerItem("Fusion","Bawi Pasta Bar","Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_bawi_pasta_bar));
-        itemsList.add(new RecyclerItem("Vegan","Maison Jo","Seocho-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_maison_jo));
+        MainActivity.itemsList.add(new RecyclerItem("Korean", "Hwangsaengga", "Jongno-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_hwangsaengga));
+        MainActivity.itemsList.add(new RecyclerItem("Korean", "Wooraeok", "Jung-gu", "62-29 Changgyeonggung-ro, Jung-gu, Seoul, South Korea", 37.5682471, 126.9978173, getString(R.string.food_wooraeok_description), R.drawable.food_wooraeok));
+        MainActivity.itemsList.add(new RecyclerItem("Asian","Tuk Tuk Noodle Thai","Mapo-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_tuktuk_noodle_thai));
+        MainActivity.itemsList.add(new RecyclerItem("Western","Charles H","Jongno-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_charles_h));
+        MainActivity.itemsList.add(new RecyclerItem("Fusion","Bar Cham","Jongno-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_bar_cham));
+        MainActivity.itemsList.add(new RecyclerItem("Asian","Kojima","Gangnam-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_kojima));
+        MainActivity.itemsList.add(new RecyclerItem("Fusion","Bawi Pasta Bar","Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_bawi_pasta_bar));
+        MainActivity.itemsList.add(new RecyclerItem("Vegan","Maison Jo","Seocho-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_maison_jo));
     }
 
 }

@@ -10,6 +10,13 @@
         * Website: http://www.seoul.go.kr
     </string>
     <string name="food">Food</string>
+    <string name="food_wooraeok_name">Wooraeok</string>
+    <string name="food_wooraeok_description">Wooraeok has been serving delicious Korean barbecue in Seoul since 1946, but the restaurant is also well known for its Pyongyang naengmyeon (Pyongyang-style cold buckwheat noodles). While most versions of this dish feature a subtle broth — often derided as bland — Wooraeok’s version is meatier and more flavorful, making it suitable for first-timers.</string>
+
+
+
+
+
     <string name="entertainment">Entertainment</string>
     <string name="transportation">Transportation</string>
     <string name="nametextview">nameTextview</string>
