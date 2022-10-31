@@ -10,12 +10,31 @@
         * Website: http://www.seoul.go.kr
     </string>
     <string name="food">Food</string>
-    <string name="food_wooraeok_name">Wooraeok</string>
-    <string name="food_wooraeok_description">Wooraeok has been serving delicious Korean barbecue in Seoul since 1946, but the restaurant is also well known for its Pyongyang naengmyeon (Pyongyang-style cold buckwheat noodles). While most versions of this dish feature a subtle broth — often derided as bland — Wooraeok’s version is meatier and more flavorful, making it suitable for first-timers.</string>
 
-
-
-
+    <string name="food_Hwangsaengga_name">Hwangsaengga</string>
+    <string name="food_Hwangsaengga_description">Hwangsaengga Kalguksu specializes in Pyongyang-style kalguksu (hand-cut noodles). The star of the menu is sagol kalguksu, a hearty bowl of noodles in thick beef bone broth with pumpkin, mushrooms, and green onions for garnish; the subtle sweetness from the vegetables nicely mingles with the umami of the broth. In the summer, try the special kongguksu, noodles in cold broth made from ground soybeans, sesame, and various nuts. No matter the time of year, order a side of the soft, meaty dumplings for the table.</string>
+    <string name="food_Hwangsaengga_address">78 Bukchon-ro 5-gil, Sogyeok-dong, Jongno-gu, Seoul, South Korea</string>
+    <string name="food_Wooraeok_name">Wooraeok</string>
+    <string name="food_Wooraeok_description">Wooraeok has been serving delicious Korean barbecue in Seoul since 1946, but the restaurant is also well known for its Pyongyang naengmyeon (Pyongyang-style cold buckwheat noodles). While most versions of this dish feature a subtle broth — often derided as bland — Wooraeok’s version is meatier and more flavorful, making it suitable for first-timers.</string>
+    <string name="food_Wooraeok_address">62–29 Changgyeonggung-ro, Jung-gu, Seoul, South Korea</string>
+    <string name="food_TukTukNoodleThai_name">Tuk Tuk Noodle Thai</string>
+    <string name="food_TukTukNoodleThai_description">Among Yeonnam-dong’s vibrant streets you’ll find Tuk Tuk Noodle Thai, where Thai chefs have served the area for over a decade. The interior is decorated with items that owner Im Donghyuk and the team brought from Thailand. Try a handful of dishes and chase them down with ice-cold Thai beers, or something from the selection of Champagne and natural wines. Sister restaurant Soi Yeonnam Mao in Gangnam is another excellent option with a smaller menu featuring Tuk Tuk’s greatest hits.</string>
+    <string name="food_TukTukNoodleThai_address">161–8 Seongmisan-ro, Mapo-gu, Seoul, South Korea</string>
+    <string name="food_CharlesH_name">Charles H</string>
+    <string name="food_CharlesH_description">Named the best bar in Korea on the Asia’s 50 Best Bars list in 2022, Charles H is a speakeasy discreetly hidden away in the lower level of the Four Seasons Hotel Seoul. After passing through a secret passage, guests find a glamorous interior suited for a lux hotel bar with decor inspired by Korea’s traditional metal ornaments. The cocktail list contains classics and original creations inspired by Charles H. Baker, the eponymous bon vivant who wrote the classic cocktail book The Gentleman’s Companion.</string>
+    <string name="food_CharlesH_address">97 Saemunan-ro, Jongno-gu, Seoul, South Korea</string>
+    <string name="food_BarCham_name">Bar Cham</string>
+    <string name="food_BarCham_description">Wind your way through the alleys of Seochon until you come across the unassuming hanoak (traditional Korean house) that houses Bar Cham. There, award-winning bartender Lim Byung-jin serves uniquely Korean signature cocktails, each named for the region that produced the local spirit featured in the drink. The interior, which goes hard on oak (or “cham” in Korean), is cozy and relaxing. Bar Cham made the 2022 Asia’s 50 Best Bars list, and there are various non-alcoholic cocktail options just as delicious as their alcoholic counterparts.</string>
+    <string name="food_BarCham_address">34 Jahamun-ro 7-gil, Tongin-dong, Jongno-gu, Seoul, South Korea</string>
+    <string name="food_Kojima_name">Kojima</string>
+    <string name="food_Kojima_description">With access to fresh seafood and the rich cultural influence of Japan, Seoul is home to some of the finest sushi outside of Japan. There are options at all price points, from cheap lunch boxes to high-end sushi, but many cite Kojima as the best in Korea. Located on top of luxury clothing store Boon the Shop, the restaurant is led by chef Kyung Jae Park, one of Seoul’s most respected sushi veterans, who gained a following while training at the Shilla Hotel’s Ariake and then cemented his reputation at his first restaurant, Sushi Chohi.</string>
+    <string name="food_Kojima_address">21 Apgujeong-ro 60-gil, Gangnam-gu, Seoul, South Korea</string>
+    <string name="food_BawiPastaBar_name">Bawi Pasta Bar</string>
+    <string name="food_BawiPastaBar_description">Fresh pasta is having a moment in Korea, and Bawi Pasta Bar is at the center of the trend. Chef Kim Hyun-Joong started the business as a one-man operation in a deserted alley, pressing dough into noodles to order. His early hit, mint pistachio pesto, has become a cult favorite, along with others like squid ink pasta topped with caviar. Although Bawi has relocated to a newer, bigger venue, Kim still cooks alone for the most part for the eight-seat counter, and much of his 10-course dinners unfold in front of guests’ eyes. The calm black interior and excellent playlist add a zen-like ambiance that wouldn’t be out of place at a high-end Japanese restaurant. Reservations through Catchtable, a local reservation app, are a must — though very hard to come by.</string>
+    <string name="food_BawiPastaBar_address">254 Itaewon-ro, Yongsan-gu, Seoul, South Korea</string>
+    <string name="food_MaisonJo_name">Maison Jo</string>
+    <string name="food_MaisonJo_description">Chef Jo Woo-Ram worked for five years at Maison Verot, a famous charcuterie restaurant in Paris, before opening ​​Maison Jo, Seoul’s leading French charcuterie house. The takeout menu of high-quality charcuteries includes pate, terrine, and saucisson, all made from Korean ingredients, as well as baguettes and other French breads and pastries made by patissier Lee Eunhee. Maison Jo’s jambon-beurre — a generous amount of butter and jambon blanc stuffed between slices of housemade baguette — is one of the city’s best sandwiches. You can also pick up premium European groceries such as olive oil, vinegar, and various natural wines.</string>
+    <string name="food_MaisonJo_address">35 Banpo-daero 7-gil, Seocho 3(sam)-dong, Seocho-gu, Seoul, South Korea</string>
 
     <string name="entertainment">Entertainment</string>
     <string name="transportation">Transportation</string>

@@ -34,10 +34,6 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
     TextView nameTextView,categoryTextView, descriptionTextView, addressTextView;
 
     GoogleMap gMap;
-    private Marker currentMarker = null;
-//    Location currentLocation = null;
-//    double currentLatitude = 0;
-//    double currentLongitude = 0;
 
     public CardViewItemFragment() {
         // Required empty public constructor
@@ -62,19 +58,27 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
 //            longitude = Double.parseDouble(getArguments().getString("longitude"));
 //            description = getArguments().getString("description");
 //            image = Integer.parseInt(getArguments().getString("image"));
-            if
+            for (int i = 0; i < MainActivity.itemsList.size(); i++) {
+                if (Objects.equals(MainActivity.itemsList.get(i).getName(), name)) {
+                    category = MainActivity.itemsList.get(i).getCategory();
+                    district = MainActivity.itemsList.get(i).getDistrict();
+                    address = MainActivity.itemsList.get(i).getAddress();
+                    latitude = MainActivity.itemsList.get(i).getLatitude();
+                    longitude = MainActivity.itemsList.get(i).getLongitude();
+                    description = MainActivity.itemsList.get(i).getDescription();
+                    image = MainActivity.itemsList.get(i).getImage();
+                }
+            }
 
-
-
-            categoryTextView = rootView.findViewById(R.id.categoryTv);
+//            categoryTextView = rootView.findViewById(R.id.categoryTv);
             nameTextView = rootView.findViewById(R.id.nameTv);
             descriptionTextView = rootView.findViewById(R.id.descriptionTv);
             addressTextView = rootView.findViewById(R.id.addressTv);
             introImageView = rootView.findViewById(R.id.introIv);
 
-            categoryTextView.setText(category);
+//            categoryTextView.setText(category);
             nameTextView.setText(name);
-            descriptionTextView.setText(getString(R.string.food_wooraeok_description));
+            descriptionTextView.setText(description);
             addressTextView.setText(address);
             introImageView.setImageResource(image);
 

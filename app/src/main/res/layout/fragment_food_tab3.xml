@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".Food_Tab3Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:scrollbars="vertical"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Third Tab" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

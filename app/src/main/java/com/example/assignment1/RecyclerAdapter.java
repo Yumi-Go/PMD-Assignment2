@@ -1,8 +1,6 @@
 package com.example.assignment1;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,15 +15,23 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     Context context;
-    List<RecyclerItem> itemArrayList;
+//    List<RecyclerItem> itemArrayList;
+//
+//    public RecyclerAdapter(List<RecyclerItem> itemArrayList) {
+//        this.itemArrayList = itemArrayList;
+//    }
 
-    public RecyclerAdapter(List<RecyclerItem> itemArrayList) {
-        this.itemArrayList = itemArrayList;
+//
+//    List<RecyclerItem> itemArrayList;
+
+//    public RecyclerAdapter(List<RecyclerItem> itemArrayList) {
+//        this.itemArrayList = itemArrayList;
+//    }
+
+    public RecyclerAdapter() {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -58,7 +64,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        RecyclerItem item = itemArrayList.get(position);
+        RecyclerItem item = MainActivity.itemsList.get(position);
         holder.categoryTextview.setText(item.getCategory());
         holder.nameTextview.setText(item.getName());
         holder.districtTextview.setText(item.getDistrict());
@@ -74,7 +80,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     CardViewItemFragment fragmentCardViewItem = new CardViewItemFragment();
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                     transaction.replace(R.id.frame_layout, fragmentCardViewItem).commitAllowingStateLoss();
-                    RecyclerItem item = itemArrayList.get(pos);
+                    RecyclerItem item = MainActivity.itemsList.get(pos);
                     String category = item.getCategory();
                     String name = item.getName();
                     String district = item.getDistrict();
@@ -104,7 +110,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return itemArrayList.size();
+        return MainActivity.itemsList.size();
     }
 
 

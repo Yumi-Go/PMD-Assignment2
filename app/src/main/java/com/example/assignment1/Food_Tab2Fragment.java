@@ -26,7 +26,7 @@ public class Food_Tab2Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_food_tab1, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_food_tab2, container, false);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         initView();
@@ -38,7 +38,7 @@ public class Food_Tab2Fragment extends Fragment {
     private void initView() {
         GridLayoutManager layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter(MainActivity.itemsList);
+        RecyclerAdapter adapter = new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
     }
 

@@ -39,7 +39,7 @@ public class Entertainment_Tab2Fragment extends Fragment {
     private void initView() {
         GridLayoutManager layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter(MainActivity.itemsList);
+        RecyclerAdapter adapter = new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
     }
 
