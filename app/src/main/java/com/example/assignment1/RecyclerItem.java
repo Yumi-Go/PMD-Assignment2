@@ -2,13 +2,17 @@ package com.example.assignment1;
 
 public class RecyclerItem {
 
-    String category, name, district;
+    String category, name, district, address;
+    double latitude, longitude;
     int image;
 
-    public RecyclerItem(String category, String name, String district, int image) {
+    public RecyclerItem(String category, String name, String district, String address, double latitude, double longitude, int image) {
         this.category = category;
         this.name = name;
         this.district = district;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.image = image;
     }
 
@@ -34,6 +38,30 @@ public class RecyclerItem {
 
     public void setDistrict(String district) {
         this.district = district;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public int getImage() {

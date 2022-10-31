@@ -8,8 +8,8 @@
     android:padding="16dp"
     tools:context=".TransportationFragment">
 
-    <fragment
-        android:id="@+id/map"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/transMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="300dp"

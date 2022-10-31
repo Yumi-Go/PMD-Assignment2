@@ -2,6 +2,8 @@ package com.example.assignment1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,11 +67,35 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.itemView.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                FragmentManager fragmentManager = activity.getSupportFragmentManager();
-                CardViewItemFragment fragmentCardViewItem = new CardViewItemFragment();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.frame_layout, fragmentCardViewItem).commitAllowingStateLoss();
+                int pos = holder.getBindingAdapterPosition();
+                if (pos != RecyclerView.NO_POSITION) {
+                    AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                    FragmentManager fragmentManager = activity.getSupportFragmentManager();
+                    CardViewItemFragment fragmentCardViewItem = new CardViewItemFragment();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    transaction.replace(R.id.frame_layout, fragmentCardViewItem).commitAllowingStateLoss();
+                    RecyclerItem item = itemArrayList.get(pos);
+                    String category = item.getCategory();
+                    String name = item.getName();
+                    String district = item.getDistrict();
+                    String address = item.getAddress();
+                    String latitude = Double.toString(item.getLatitude());
+                    String longitude = Double.toString(item.getLongitude());
+                    String image = Integer.toString(item.getImage());
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("category", category);
+                    bundle.putString("name", name);
+                    bundle.putString("district", district);
+                    bundle.putString("address", address);
+                    bundle.putString("latitude", latitude);
+                    bundle.putString("longitude", longitude);
+                    bundle.putString("image", image);
+                    fragmentCardViewItem.setArguments(bundle);
+
+
+
+                }
             }
         });
 

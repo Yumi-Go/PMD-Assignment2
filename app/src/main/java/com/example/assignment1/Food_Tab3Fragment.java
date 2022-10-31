@@ -46,14 +46,14 @@ public class Food_Tab3Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
-        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
-        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
-        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", R.drawable.food_big_lights));
-        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, R.drawable.food_the_library));
     }
 
 

@@ -46,12 +46,12 @@ public class Food_Tab2Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new RecyclerItem("Cafe", "Coffee Libre", "Mapo-gu", R.drawable.food_coffee_libre));
-        itemsList.add(new RecyclerItem("Cafe", "Fritz Coffee Company", "Mapo-gu", R.drawable.food_fritz_coffee_company));
-        itemsList.add(new RecyclerItem("Bakery","Tartine Bakery Dosan","Gangnam-gu", R.drawable.food_tartine_bakery_dosan));
-        itemsList.add(new RecyclerItem("Bakery","Maison M'O","Seocho-hu", R.drawable.food_maison_mo));
-        itemsList.add(new RecyclerItem("Dessert","Old Ferry Donut","Yongsan-gu", R.drawable.food_old_ferry_donut));
-        itemsList.add(new RecyclerItem("Cafe","Pont Cafe","Yongsan-gu", R.drawable.food_pont_cafe));
+        itemsList.add(new RecyclerItem("Cafe", "Coffee Libre", "Mapo-gu", "", 37.5682471, 126.9978173, R.drawable.food_coffee_libre));
+        itemsList.add(new RecyclerItem("Cafe", "Fritz Coffee Company", "Mapo-gu", "", 37.5682471, 126.9978173, R.drawable.food_fritz_coffee_company));
+        itemsList.add(new RecyclerItem("Bakery","Tartine Bakery Dosan","Gangnam-gu", "", 37.5682471, 126.9978173, R.drawable.food_tartine_bakery_dosan));
+        itemsList.add(new RecyclerItem("Bakery","Maison M'O","Seocho-hu", "", 37.5682471, 126.9978173, R.drawable.food_maison_mo));
+        itemsList.add(new RecyclerItem("Dessert","Old Ferry Donut","Yongsan-gu", "", 37.5682471, 126.9978173, R.drawable.food_old_ferry_donut));
+        itemsList.add(new RecyclerItem("Cafe","Pont Cafe","Yongsan-gu", "", 37.5682471, 126.9978173, R.drawable.food_pont_cafe));
 
     }
 

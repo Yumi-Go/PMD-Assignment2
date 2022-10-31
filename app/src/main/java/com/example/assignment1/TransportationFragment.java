@@ -94,7 +94,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                 Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION});
         btnReset.setOnClickListener(view -> {getCurrentLocation();});
 
-        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.transMap);
         mapFragment.getMapAsync(this);
 
         btnGmap.setOnClickListener(new View.OnClickListener() {
