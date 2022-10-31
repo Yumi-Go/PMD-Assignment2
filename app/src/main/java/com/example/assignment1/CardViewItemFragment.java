@@ -64,7 +64,7 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
 
             categoryTextView = rootView.findViewById(R.id.categoryTv);
             nameTextView = rootView.findViewById(R.id.nameTv);
-            introTextView = rootView.findViewById(R.id.introTv);
+            introTextView = rootView.findViewById(R.id.descriptionTv);
             addressTextView = rootView.findViewById(R.id.addressTv);
             introImageView = rootView.findViewById(R.id.introIv);
 
