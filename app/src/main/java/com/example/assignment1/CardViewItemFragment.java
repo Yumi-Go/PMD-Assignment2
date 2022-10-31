@@ -105,59 +105,22 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
 
     }
 
-//    @Override
-//    public void onMapReady(@NonNull GoogleMap googleMap) {
-//        gMap = googleMap;
-//        LatLng location = new LatLng(latitude, longitude);
-//
-//        MarkerOptions marker = new MarkerOptions();
-//        marker.position(location);
-//        marker.title(name);
-////        marker.snippet("SEOUL");
-//
-//        Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
-//        gMap.setOnInfoWindowClickListener(this);
-//        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 5));
-//
-//    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         if (getArguments() != null) {
-//            double latitude = Double.parseDouble(getArguments().getString("latitude"));
-//            double longitude = Double.parseDouble(getArguments().getString("longitude"));
             gMap = googleMap;
-            LatLng DEFAULT_LatLng = new LatLng(latitude, longitude);
+            LatLng location = new LatLng(latitude, longitude);
 
             MarkerOptions marker = new MarkerOptions();
-            marker.position(DEFAULT_LatLng);
+            marker.position(location);
             marker.title(name);
             marker.snippet("Seoul");
 
             Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
             gMap.setOnInfoWindowClickListener(this);
-            gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(DEFAULT_LatLng, 15));
+            gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
         }
-
-
-//        double defaultLatitude = DEFAULT_LatLng.latitude;
-//        double defaultLongitude = DEFAULT_LatLng.longitude;
     }
-
-
-//    public void updateLocation(Location location) {
-//        if (currentMarker != null) currentMarker.remove();
-//        LatLng location_LatLng = new LatLng(latitude, longitude);
-//        MarkerOptions marker = new MarkerOptions();
-//        marker.position(location_LatLng);
-//        marker.title(name);
-////        marker.snippet("");
-//        marker.draggable(true);
-//        currentMarker = gMap.addMarker(marker);
-//
-//        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(location_LatLng, 13);
-//        gMap.moveCamera(cameraUpdate);
-//
-//    }
 
 }

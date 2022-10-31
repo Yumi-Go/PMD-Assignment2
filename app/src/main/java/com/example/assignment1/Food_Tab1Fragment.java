@@ -47,7 +47,7 @@ public class Food_Tab1Fragment extends Fragment {
 
     private void initItems() {
         itemsList.add(new RecyclerItem("Korean", "Hwangsaengga", "Jongno-gu", "", 37.5682471, 126.9978173, R.drawable.food_hwangsaengga));
-        itemsList.add(new RecyclerItem("Korean", "Wooraeok", "Jung-gu", "", 37.5682471, 126.9978173, R.drawable.food_wooraeok));
+        itemsList.add(new RecyclerItem("Korean", "Wooraeok", "Jung-gu", "62-29 Changgyeonggung-ro, Jung-gu, Seoul, South Korea", 37.5682471, 126.9978173, R.drawable.food_wooraeok));
         itemsList.add(new RecyclerItem("Asian","Tuk Tuk Noodle Thai","Mapo-gu", "", 37.5682471, 126.9978173, R.drawable.food_tuktuk_noodle_thai));
         itemsList.add(new RecyclerItem("Western","Charles H","Jongno-gu", "", 37.5682471, 126.9978173, R.drawable.food_charles_h));
         itemsList.add(new RecyclerItem("Fusion","Bar Cham","Jongno-gu", "", 37.5682471, 126.9978173, R.drawable.food_bar_cham));
