@@ -20,10 +20,10 @@ import java.util.List;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     Context context;
-    List<RecyclerItem> itemArrayList;
+    List<RecyclerItem> itemsList;
 
-    public RecyclerAdapter(List<RecyclerItem> itemArrayList) {
-        this.itemArrayList = itemArrayList;
+    public RecyclerAdapter(List<RecyclerItem> itemsList) {
+        this.itemsList = itemsList;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
@@ -56,7 +56,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        RecyclerItem item = itemArrayList.get(position);
+        RecyclerItem item = itemsList.get(position);
         holder.categoryTextview.setText(item.getCategory());
         holder.nameTextview.setText(item.getName());
         holder.districtTextview.setText(item.getDistrict());
@@ -69,27 +69,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 if (pos != RecyclerView.NO_POSITION) {
                     AppCompatActivity activity = (AppCompatActivity) v.getContext();
                     FragmentManager fragmentManager = activity.getSupportFragmentManager();
-                    CardViewItemFragment fragmentCardViewItem = new CardViewItemFragment();
+                    CardViewItemFragment fragmentCardViewItem = new CardViewItemFragment(item);
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                     transaction.replace(R.id.frame_layout, fragmentCardViewItem).commitAllowingStateLoss();
-                    RecyclerItem item = itemArrayList.get(pos);
-                    String category = item.getCategory();
-                    String name = item.getName();
-                    String district = item.getDistrict();
-                    String address = item.getAddress();
-                    String latitude = Double.toString(item.getLatitude());
-                    String longitude = Double.toString(item.getLongitude());
-                    String image = Integer.toString(item.getImage());
-
-                    Bundle bundle = new Bundle();
-//                    bundle.putString("category", category);
-                    bundle.putString("name", name);
-//                    bundle.putString("district", district);
-//                    bundle.putString("address", address);
-//                    bundle.putString("latitude", latitude);
-//                    bundle.putString("longitude", longitude);
-//                    bundle.putString("image", image);
-                    fragmentCardViewItem.setArguments(bundle);
+//                    RecyclerItem item = itemsList.get(pos);
+//                    String category = item.getCategory();
+//                    String name = item.getName();
+//                    String district = item.getDistrict();
+//                    String address = item.getAddress();
+//                    String latitude = Double.toString(item.getLatitude());
+//                    String longitude = Double.toString(item.getLongitude());
+//                    String image = Integer.toString(item.getImage());
+//
+//                    Bundle bundle = new Bundle();
+//                    bundle.putString("name", name);
+//                    fragmentCardViewItem.setArguments(bundle);
 
 
 
@@ -102,7 +96,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return itemArrayList.size();
+        return itemsList.size();
     }
 
 
