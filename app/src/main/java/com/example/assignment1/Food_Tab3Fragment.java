@@ -16,6 +16,7 @@ import java.util.List;
 public class Food_Tab3Fragment extends Fragment {
 
     RecyclerView recyclerView;
+    List<RecyclerItem> itemsList = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,19 +39,19 @@ public class Food_Tab3Fragment extends Fragment {
     private void initView() {
         GridLayoutManager layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter();
+        RecyclerAdapter adapter = new RecyclerAdapter(itemsList);
         recyclerView.setAdapter(adapter);
     }
 
     private void initItems() {
-        MainActivity.itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
-        MainActivity.itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
-        MainActivity.itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
-        MainActivity.itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
-        MainActivity.itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
-        MainActivity.itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
-        MainActivity.itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
-        MainActivity.itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Bar", "The Library", "Jung-gu", "", 37.5682471, 126.9978173, "", R.drawable.food_the_library));
     }
 
 

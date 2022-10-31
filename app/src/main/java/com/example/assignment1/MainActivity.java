@@ -16,7 +16,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private int num_page = 4;
-    static List<RecyclerItem> itemsList = new ArrayList<>();
+//    static List<RecyclerItem> itemsList = new ArrayList<>();
 
 
     private final FragmentManager fragmentManager = getSupportFragmentManager();

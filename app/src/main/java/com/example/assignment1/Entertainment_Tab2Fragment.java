@@ -17,6 +17,7 @@ import java.util.List;
 public class Entertainment_Tab2Fragment extends Fragment {
 
     RecyclerView recyclerView;
+    List<RecyclerItem> itemsList = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,22 +40,22 @@ public class Entertainment_Tab2Fragment extends Fragment {
     private void initView() {
         GridLayoutManager layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter();
+        RecyclerAdapter adapter = new RecyclerAdapter(itemsList);
         recyclerView.setAdapter(adapter);
     }
 
     private void initItems() {
-        MainActivity.itemsList.add(new RecyclerItem("Coffee", "aaa", "district1", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        MainActivity.itemsList.add(new RecyclerItem("Coffee", "bbb", "district2", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        MainActivity.itemsList.add(new RecyclerItem("Coffee","ccc","district3", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        MainActivity.itemsList.add(new RecyclerItem("Coffee","ddd","district4", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        MainActivity.itemsList.add(new RecyclerItem("Coffee","eee","district5", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        MainActivity.itemsList.add(new RecyclerItem("Coffee","fff","district6", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        MainActivity.itemsList.add(new RecyclerItem("Restaurant","ggg","district7", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        MainActivity.itemsList.add(new RecyclerItem("Restaurant","hhh","district8", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        MainActivity.itemsList.add(new RecyclerItem("Restaurant","iii","district9", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        MainActivity.itemsList.add(new RecyclerItem("Restaurant","jjj","district10", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        MainActivity.itemsList.add(new RecyclerItem("Restaurant","kkk","district11", "", 37.5682471, 126.9978173, "", R.drawable.image2));
+        itemsList.add(new RecyclerItem("Coffee", "aaa", "district1", "", 37.5682471, 126.9978173, "", R.drawable.image1));
+        itemsList.add(new RecyclerItem("Coffee", "bbb", "district2", "", 37.5682471, 126.9978173, "", R.drawable.image2));
+        itemsList.add(new RecyclerItem("Coffee","ccc","district3", "", 37.5682471, 126.9978173, "", R.drawable.image3));
+        itemsList.add(new RecyclerItem("Coffee","ddd","district4", "", 37.5682471, 126.9978173, "", R.drawable.image1));
+        itemsList.add(new RecyclerItem("Coffee","eee","district5", "", 37.5682471, 126.9978173, "", R.drawable.image2));
+        itemsList.add(new RecyclerItem("Coffee","fff","district6", "", 37.5682471, 126.9978173, "", R.drawable.image3));
+        itemsList.add(new RecyclerItem("Restaurant","ggg","district7", "", 37.5682471, 126.9978173, "", R.drawable.image1));
+        itemsList.add(new RecyclerItem("Restaurant","hhh","district8", "", 37.5682471, 126.9978173, "", R.drawable.image2));
+        itemsList.add(new RecyclerItem("Restaurant","iii","district9", "", 37.5682471, 126.9978173, "", R.drawable.image3));
+        itemsList.add(new RecyclerItem("Restaurant","jjj","district10", "", 37.5682471, 126.9978173, "", R.drawable.image1));
+        itemsList.add(new RecyclerItem("Restaurant","kkk","district11", "", 37.5682471, 126.9978173, "", R.drawable.image2));
     }
 
 }

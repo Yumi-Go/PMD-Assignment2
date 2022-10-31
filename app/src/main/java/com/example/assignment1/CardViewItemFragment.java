@@ -21,6 +21,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -29,6 +31,7 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
     String category, name, district, address, description;
     double latitude, longitude;
     int image;
+    List<RecyclerItem> itemsList = new ArrayList<>();
 
     ImageView introImageView;
     TextView nameTextView,categoryTextView, descriptionTextView, addressTextView;
@@ -58,15 +61,15 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
 //            longitude = Double.parseDouble(getArguments().getString("longitude"));
 //            description = getArguments().getString("description");
 //            image = Integer.parseInt(getArguments().getString("image"));
-            for (int i = 0; i < MainActivity.itemsList.size(); i++) {
-                if (Objects.equals(MainActivity.itemsList.get(i).getName(), name)) {
-                    category = MainActivity.itemsList.get(i).getCategory();
-                    district = MainActivity.itemsList.get(i).getDistrict();
-                    address = MainActivity.itemsList.get(i).getAddress();
-                    latitude = MainActivity.itemsList.get(i).getLatitude();
-                    longitude = MainActivity.itemsList.get(i).getLongitude();
-                    description = MainActivity.itemsList.get(i).getDescription();
-                    image = MainActivity.itemsList.get(i).getImage();
+            for (int i = 0; i < itemsList.size(); i++) {
+                if (Objects.equals(itemsList.get(i).getName(), name)) {
+                    category = itemsList.get(i).getCategory();
+                    district = itemsList.get(i).getDistrict();
+                    address = itemsList.get(i).getAddress();
+                    latitude = itemsList.get(i).getLatitude();
+                    longitude = itemsList.get(i).getLongitude();
+                    description = itemsList.get(i).getDescription();
+                    image = itemsList.get(i).getImage();
                 }
             }
 
@@ -116,19 +119,27 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         if (getArguments() != null) {
-            gMap = googleMap;
-            LatLng location = new LatLng(latitude, longitude);
-
-            MarkerOptions marker = new MarkerOptions();
-            marker.position(location);
-            marker.title(name);
-            marker.snippet("Seoul");
-
-            Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
-            gMap.setOnInfoWindowClickListener(this);
-            gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
+            name = getArguments().getString("name");
+            for (int i = 0; i < itemsList.size(); i++) {
+                if (Objects.equals(itemsList.get(i).getName(), name)) {
+                    latitude = itemsList.get(i).getLatitude();
+                    longitude = itemsList.get(i).getLongitude();
+                }
+            }
         }
+        gMap = googleMap;
+        LatLng location = new LatLng(latitude, longitude);
+
+        MarkerOptions marker = new MarkerOptions();
+        marker.position(location);
+        marker.title(name);
+        marker.snippet("Seoul");
+
+        Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
+        gMap.setOnInfoWindowClickListener(this);
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
     }
 
 }
