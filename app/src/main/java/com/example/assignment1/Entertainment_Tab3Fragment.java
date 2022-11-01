@@ -45,9 +45,9 @@ public class Entertainment_Tab3Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new RecyclerItem("Shopping Area", getString(R.string.entertainment_Myeongdong_name), "Jung-gu", getString(R.string.entertainment_Myeongdong_address), 37.56363089329996, 126.98261752078477, getString(R.string.entertainment_Myeongdong_description), R.drawable.entertainment_myeongdong));
-        itemsList.add(new RecyclerItem("Shopping Area", getString(R.string.entertainment_Dongdaemun_name), "Jung-gu", getString(R.string.entertainment_Dongdaemun_address), 37.5662988480274, 127.00789632369924, getString(R.string.entertainment_Dongdaemun_description), R.drawable.entertainment_dongdaemun));
-        itemsList.add(new RecyclerItem("Shopping Street",getString(R.string.entertainment_Hongdae_name),"Mapo-gu", getString(R.string.entertainment_Hongdae_address), 37.55581587843709, 126.9240854268621, getString(R.string.entertainment_Hongdae_description), R.drawable.entertainment_hongdae));
+        itemsList.add(new RecyclerItem("Shopping Area", getString(R.string.entertainment_myeongdong_name), "Jung-gu", getString(R.string.entertainment_myeongdong_address), 37.56363089329996, 126.98261752078477, getString(R.string.entertainment_myeongdong_description), R.drawable.entertainment_myeongdong));
+        itemsList.add(new RecyclerItem("Shopping Area", getString(R.string.entertainment_dongdaemun_name), "Jung-gu", getString(R.string.entertainment_dongdaemun_address), 37.5662988480274, 127.00789632369924, getString(R.string.entertainment_dongdaemun_description), R.drawable.entertainment_dongdaemun));
+        itemsList.add(new RecyclerItem("Shopping Street",getString(R.string.entertainment_hongdae_name),"Mapo-gu", getString(R.string.entertainment_hongdae_address), 37.55581587843709, 126.9240854268621, getString(R.string.entertainment_hongdae_description), R.drawable.entertainment_hongdae));
     }
 
 

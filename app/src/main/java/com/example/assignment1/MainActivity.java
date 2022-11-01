@@ -2,22 +2,27 @@ package com.example.assignment1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
 
     private int num_page = 4;
 //    static List<RecyclerItem> itemsList = new ArrayList<>();
 
+    public static Stack<Fragment> fragmentStack;
 
     private final FragmentManager fragmentManager = getSupportFragmentManager();
     private HomeFragment fragmentHome = new HomeFragment();
@@ -35,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(new ItemSelectedListener());
+
+        fragmentStack = new Stack<>();
+        fragmentStack.push(fragmentHome);
+
+
     }
 
     class ItemSelectedListener implements BottomNavigationView.OnItemSelectedListener {
@@ -59,4 +69,20 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+
+//    @Override
+//    public void onBackPressed(){
+////        Toast.makeText(this, "no way", Toast.LENGTH_SHORT).show();
+//        if (!fragmentStack.isEmpty()) {
+//            Fragment nextFragment = fragmentStack.pop();
+//            fragmentManager.beginTransaction().replace(R.id.frame_layout, nextFragment).commit();
+//            System.out.println("[TESTING >>] " + fragmentStack.size());
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
+
+
+
 }

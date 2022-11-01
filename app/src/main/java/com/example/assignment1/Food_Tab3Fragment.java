@@ -44,12 +44,12 @@ public class Food_Tab3Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", getString(R.string.food_BigLights_address), 37.53543842594574, 127.0101485275639, getString(R.string.food_BigLights_description), R.drawable.food_big_lights));
-        itemsList.add(new RecyclerItem("Cocktail", "Bar Musk", "Gangnam-gu", getString(R.string.food_BarMusk_address), 37.52266059999937, 127.03480512369961, getString(R.string.food_BarMusk_description), R.drawable.food_bar_musk));
-        itemsList.add(new RecyclerItem("Other", "Bar Tea Scent", "Gangnam-gu", getString(R.string.food_BarTeaScent_address), 37.5266676844209, 127.04166940977258, getString(R.string.food_BarTeaScent_description), R.drawable.food_bar_tea_scent));
-        itemsList.add(new RecyclerItem("Bar", "Miners Bar", "Yongsan-gu", getString(R.string.food_MinersBar_address), 37.53359360505004, 127.00642764754234, getString(R.string.food_MinersBar_description), R.drawable.food_miners_bar));
-        itemsList.add(new RecyclerItem("Cocktail", "Marque d'Amour", "Jung-gu", getString(R.string.food_MarquedAmour_address), 37.55983617447398, 126.97948655087812, getString(R.string.food_MarquedAmour_description), R.drawable.food_marque_d_amour));
-        itemsList.add(new RecyclerItem("Bar", "Le Chamber", "Gangnam-gu", getString(R.string.food_LeChamber_address), 37.52621618441137, 127.0411132975041, getString(R.string.food_LeChamber_description), R.drawable.food_le_chamber));
+        itemsList.add(new RecyclerItem("Wine", "Big Lights", "Yongsan-gu", getString(R.string.food_biglights_address), 37.53543842594574, 127.0101485275639, getString(R.string.food_biglights_description), R.drawable.food_big_lights));
+        itemsList.add(new RecyclerItem("Cocktail", "Bar Musk", "Gangnam-gu", getString(R.string.food_barmusk_address), 37.52266059999937, 127.03480512369961, getString(R.string.food_barmusk_description), R.drawable.food_bar_musk));
+        itemsList.add(new RecyclerItem("Other", "Bar Tea Scent", "Gangnam-gu", getString(R.string.food_barteascent_address), 37.5266676844209, 127.04166940977258, getString(R.string.food_barteascent_description), R.drawable.food_bar_tea_scent));
+        itemsList.add(new RecyclerItem("Bar", "Miners Bar", "Yongsan-gu", getString(R.string.food_minersbar_address), 37.53359360505004, 127.00642764754234, getString(R.string.food_minersbar_description), R.drawable.food_miners_bar));
+        itemsList.add(new RecyclerItem("Cocktail", "Marque d'Amour", "Jung-gu", getString(R.string.food_marquedamour_address), 37.55983617447398, 126.97948655087812, getString(R.string.food_marquedamour_description), R.drawable.food_marque_d_amour));
+        itemsList.add(new RecyclerItem("Bar", "Le Chamber", "Gangnam-gu", getString(R.string.food_lechamber_address), 37.52621618441137, 127.0411132975041, getString(R.string.food_lechamber_description), R.drawable.food_le_chamber));
     }
 
 }

@@ -53,7 +53,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 //    String uri_string = "";
 
 
-    Button btnReset, btnGmap, btnBus, btnSubway, btnTaxi;
+    Button btnReset, btnGmap, btnBus, btnSubway;
 //    TextView tvLatitude, tvLongitude;
     FusedLocationProviderClient client;
 
@@ -68,7 +68,6 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
         btnGmap = rootView.findViewById(R.id.btn_googleMap);
         btnBus = rootView.findViewById(R.id.btn_bus);
         btnSubway = rootView.findViewById(R.id.btn_subway);
-        btnTaxi = rootView.findViewById(R.id.btn_taxi);
 
 //        tvLatitude = rootView.findViewById(R.id.tv_latitude);
 //        tvLongitude = rootView.findViewById(R.id.tv_longitude);
@@ -141,15 +140,6 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                 transaction.replace(R.id.frame_layout, fragmentSubway).commitAllowingStateLoss();
             }
         });
-
-        btnTaxi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Transportation_Taxi fragmentTaxi = new Transportation_Taxi();
-//                transaction.replace(R.id.frame_layout, fragmentTaxi).commitAllowingStateLoss();
-            }
-        });
-
 
         return rootView;
     }

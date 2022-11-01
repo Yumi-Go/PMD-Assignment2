@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_red_dark"
-        android:text="@string/google_map"
+        android:text= "@string/google_map"
         android:textColor="@color/white"
         android:textSize="14sp" />
 
@@ -48,133 +48,6 @@
         android:text="@string/subway"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/btn_taxi"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/dark_orange"
-        android:text="@string/taxi"
-        android:textSize="20sp" />
-
-
-    <!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:text="@string/latitude"-->
-<!--        android:textColor="@color/teal_200"-->
-<!--        android:textSize="32sp"-->
-<!--        android:textStyle="bold" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tv_latitude"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="0.0"-->
-<!--        android:textSize="24sp" />-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:text="@string/longitude"-->
-<!--        android:textColor="@color/teal_200"-->
-<!--        android:textSize="32sp"-->
-<!--        android:textStyle="bold" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tv_longitude"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="0.0"-->
-<!--        android:textSize="24sp" />-->
-
 </LinearLayout>
 
-
-
-
-
-
-
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:id="@+id/layout_store"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:gravity="center"-->
-<!--    android:orientation="vertical"-->
-<!--    tools:context=".TransportationFragment">-->
-
-<!--    <com.google.android.gms.maps.MapView-->
-<!--        android:id="@+id/map"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="300dp" />-->
-
-
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:gravity="center"-->
-<!--        android:text="This is Map page"-->
-<!--        android:textColor="@android:color/black"-->
-<!--        android:textSize="50sp"/>-->
-
-<!--</LinearLayout>-->
-
-
-
-
-
-
-
-
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".TransportationFragment">-->
-
-<!--    <com.google.android.material.tabs.TabLayout-->
-<!--        android:id="@+id/transportation_tab_layout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/transportationTab1"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            />-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/transportationTab2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            />-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/transportationTab3"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            />-->
-
-<!--    </com.google.android.material.tabs.TabLayout>-->
-
-<!--    <androidx.viewpager2.widget.ViewPager2-->
-<!--        android:id="@+id/transportationTabViewpager"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/transportation_tab_layout" />-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
