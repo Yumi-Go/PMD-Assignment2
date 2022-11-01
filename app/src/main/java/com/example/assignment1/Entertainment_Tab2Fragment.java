@@ -45,17 +45,13 @@ public class Entertainment_Tab2Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new RecyclerItem("Coffee", "aaa", "district1", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Coffee", "bbb", "district2", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        itemsList.add(new RecyclerItem("Coffee","ccc","district3", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        itemsList.add(new RecyclerItem("Coffee","ddd","district4", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Coffee","eee","district5", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        itemsList.add(new RecyclerItem("Coffee","fff","district6", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        itemsList.add(new RecyclerItem("Restaurant","ggg","district7", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Restaurant","hhh","district8", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        itemsList.add(new RecyclerItem("Restaurant","iii","district9", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        itemsList.add(new RecyclerItem("Restaurant","jjj","district10", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Restaurant","kkk","district11", "", 37.5682471, 126.9978173, "", R.drawable.image2));
+        itemsList.add(new RecyclerItem("Palace", getString(R.string.entertainment_Deoksugung_name), "Jung-gu", getString(R.string.entertainment_Deoksugung_address), 37.565753854275364, 126.97513536866924, getString(R.string.entertainment_Deoksugung_description), R.drawable.entertainment_Deoksugung));
+        itemsList.add(new RecyclerItem("Palace", getString(R.string.entertainment_Changgyeonggung_name), "Jongno-gu", getString(R.string.entertainment_Changgyeonggung_address), 37.57871976315565, 126.99483761099776, getString(R.string.entertainment_Changgyeonggung_description), R.drawable.entertainment_Changgyeonggung));
+        itemsList.add(new RecyclerItem("Palace",getString(R.string.entertainment_Changdeokgung_name),"Jongno-gu", getString(R.string.entertainment_Changdeokgung_address), 37.579883194712565, 126.9911793644108, getString(R.string.entertainment_Changdeokgung_description), R.drawable.entertainment_Changdeokgung));
+        itemsList.add(new RecyclerItem("Land Mark",getString(R.string.entertainment_Gwanghwamun_name),"Jongno-gu", getString(R.string.entertainment_Gwanghwamun_address), 37.575872948449465, 126.976833557665, getString(R.string.entertainment_Gwanghwamun_description), R.drawable.entertainment_gwanghwamun));
+        itemsList.add(new RecyclerItem("Palace",getString(R.string.entertainment_Gyeongbokgung_name),"Jongno-gu", getString(R.string.entertainment_Gyeongbokgung_address), 37.579613791292765, 126.97703429198323, getString(R.string.entertainment_Gyeongbokgung_description), R.drawable.entertainment_Gyeongbokgung));
+        itemsList.add(new RecyclerItem("Village",getString(R.string.entertainment_BukchonHanokVillage_name),"Jongno-gu", getString(R.string.entertainment_BukchonHanokVillage_address), 37.581520594550966, 126.9848875244898, getString(R.string.entertainment_BukchonHanokVillage_description), R.drawable.entertainment_bukchon_hanok_village));
+
     }
 
 }

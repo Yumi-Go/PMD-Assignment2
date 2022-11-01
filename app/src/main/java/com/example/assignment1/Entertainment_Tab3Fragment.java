@@ -45,17 +45,9 @@ public class Entertainment_Tab3Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new RecyclerItem("Coffee", "aaa", "district1", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Coffee", "bbb", "district2", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        itemsList.add(new RecyclerItem("Coffee","ccc","district3", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        itemsList.add(new RecyclerItem("Coffee","ddd","district4", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Coffee","eee","district5", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        itemsList.add(new RecyclerItem("Coffee","fff","district6", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        itemsList.add(new RecyclerItem("Restaurant","ggg","district7", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Restaurant","hhh","district8", "", 37.5682471, 126.9978173, "", R.drawable.image2));
-        itemsList.add(new RecyclerItem("Restaurant","iii","district9", "", 37.5682471, 126.9978173, "", R.drawable.image3));
-        itemsList.add(new RecyclerItem("Restaurant","jjj","district10", "", 37.5682471, 126.9978173, "", R.drawable.image1));
-        itemsList.add(new RecyclerItem("Restaurant","kkk","district11", "", 37.5682471, 126.9978173, "", R.drawable.image2));
+        itemsList.add(new RecyclerItem("Shopping Area", getString(R.string.entertainment_Myeongdong_name), "Jung-gu", getString(R.string.entertainment_Myeongdong_address), 37.56363089329996, 126.98261752078477, getString(R.string.entertainment_Myeongdong_description), R.drawable.entertainment_myeongdong));
+        itemsList.add(new RecyclerItem("Shopping Area", getString(R.string.entertainment_Dongdaemun_name), "Jung-gu", getString(R.string.entertainment_Dongdaemun_address), 37.5662988480274, 127.00789632369924, getString(R.string.entertainment_Dongdaemun_description), R.drawable.entertainment_dongdaemun));
+        itemsList.add(new RecyclerItem("Shopping Street",getString(R.string.entertainment_Hongdae_name),"Mapo-gu", getString(R.string.entertainment_Hongdae_address), 37.55581587843709, 126.9240854268621, getString(R.string.entertainment_Hongdae_description), R.drawable.entertainment_hongdae));
     }
 
 

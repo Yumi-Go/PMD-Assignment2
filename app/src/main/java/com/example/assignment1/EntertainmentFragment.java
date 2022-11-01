@@ -46,9 +46,9 @@ public class EntertainmentFragment extends Fragment {
         viewPager.setAdapter(adapter);
 
         tabTitles = new ArrayList<>();
-        tabTitles.add("Amusement Park");
-        tabTitles.add("Theater");
-        tabTitles.add("Shopping Center");
+        tabTitles.add("Park");
+        tabTitles.add("History");
+        tabTitles.add("Shopping");
 
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText(tabTitles.get(position))).attach();
