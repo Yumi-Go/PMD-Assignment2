@@ -30,12 +30,6 @@
             android:contentDescription="TODO"
             android:src="@android:drawable/ic_menu_help" />
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/categoryTv"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="TextView" />-->
-
         <TextView
             android:id="@+id/descriptionTv"
             android:layout_width="match_parent"

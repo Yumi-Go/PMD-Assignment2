@@ -42,10 +42,6 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
 
     GoogleMap gMap;
 
-//    public CardViewItemFragment() {
-//        // Required empty public constructor
-//    }
-
     public CardViewItemFragment(RecyclerItem item) {
         this.item = item;
     }
@@ -53,17 +49,6 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // This callback will only be called when MyFragment is at least Started.
-//        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
-//            @Override
-//            public void handleOnBackPressed() {
-//                // Handle the back button event
-//                NavHostFragment.findNavController(this).navigateUp();
-//            }
-//        };
-//        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
-//
-//        // The callback can be enabled or disabled here or in handleOnBackPressed()
     }
 
     @Override
@@ -90,7 +75,6 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
         addressTextView.setText(address);
         introImageView.setImageResource(image);
 
-//        MapsInitializer.initialize(requireContext(), MapsInitializer.Renderer.LATEST, this);
         ActivityResultLauncher<String[]> locationPermissionRequest =
                 registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
 //                    Boolean fineLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false);
@@ -125,35 +109,8 @@ public class CardViewItemFragment extends Fragment implements OnMapReadyCallback
         longitude = item.getLongitude();
         gMap = googleMap;
         LatLng location = new LatLng(latitude, longitude);
-
-//        String uri = String.format(Locale.ENGLISH, "geo:%f,%f?z=%d",
-//                latitude, longitude, 15);
-
-
         gMap.addMarker(new MarkerOptions().position(location).title(name));
-//        gMap.moveCamera(CameraUpdateFactory.newLatLng(location));
         gMap.setOnInfoWindowClickListener(this);
         gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
-
-//        MarkerOptions marker = new MarkerOptions();
-//        marker.position(location);
-//        marker.title(name);
-//        marker.snippet("Seoul");
-//
-//        Objects.requireNonNull(googleMap.addMarker(marker)).showInfoWindow();
-//        gMap.setOnInfoWindowClickListener(this);
-//        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15));
     }
-
-//    @Override
-//    public void onMapsSdkInitialized(@NonNull Renderer renderer) {
-//        switch (renderer) {
-//            case LATEST:
-//                Log.d("MapsDemo", "The latest version of the renderer is used.");
-//                break;
-//            case LEGACY:
-//                Log.d("MapsDemo", "The legacy version of the renderer is used.");
-//                break;
-//        }
-//    }
 }

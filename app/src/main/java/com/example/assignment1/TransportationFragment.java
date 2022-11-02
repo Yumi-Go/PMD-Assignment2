@@ -50,15 +50,9 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
     Location currentLocation = null;
     double currentLatitude = 0;
     double currentLongitude = 0;
-//    String uri_string = "";
-
 
     Button btnReset, btnGmap, btnBus, btnSubway;
-//    TextView tvLatitude, tvLongitude;
     FusedLocationProviderClient client;
-
-
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -68,11 +62,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
         btnGmap = rootView.findViewById(R.id.btn_googleMap);
         btnBus = rootView.findViewById(R.id.btn_bus);
         btnSubway = rootView.findViewById(R.id.btn_subway);
-
-//        tvLatitude = rootView.findViewById(R.id.tv_latitude);
-//        tvLongitude = rootView.findViewById(R.id.tv_longitude);
         client = LocationServices.getFusedLocationProviderClient(getActivity());
-
 
         ActivityResultLauncher<String[]> locationPermissionRequest =
                 registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
@@ -87,7 +77,6 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                         Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
                     }
                 });
-
 
         locationPermissionRequest.launch(new String[] {
                 Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION});
@@ -108,16 +97,6 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                 } catch (ActivityNotFoundException e) {
                     e.printStackTrace();
                 }
-
-////                String uri_string = "geo: " + currentLatitude + ", " + currentLongitude;
-//                Uri location = Uri.parse(uri_string);
-//                Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
-//                mapIntent.setPackage("com.google.android.apps.maps");
-//                try {
-//                    startActivity(mapIntent);
-//                } catch (ActivityNotFoundException e) {
-//                    e.printStackTrace();
-//                }
             }
         });
 
@@ -156,8 +135,6 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                     Location location = task.getResult();
                     if (location != null) {
                         updateLocation(location);
-//                        tvLatitude.setText(String.valueOf(location.getLatitude()));
-//                        tvLongitude.setText(String.valueOf(location.getLongitude()));
                     } else {
                         LocationRequest locationRequest = new LocationRequest().setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                                         .setInterval(10000).setFastestInterval(1000).setNumUpdates(1);
@@ -169,9 +146,6 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
                                     currentLatitude = currentLocation.getLatitude();
                                     currentLongitude = currentLocation.getLongitude();
                                     updateLocation(currentLocation);
-//                                    uri_string = "\"geo: " + currentLatitude + ", " + currentLongitude + "\"";
-//                                    tvLatitude.setText(String.valueOf(currentLatitude));
-//                                    tvLongitude.setText(String.valueOf(currentLongitude));
                                 }
                             }
                         };
@@ -199,10 +173,6 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
         gMap.setOnInfoWindowClickListener(this);
         gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(DEFAULT_LatLng, 5));
 
-        double defaultLatitude = DEFAULT_LatLng.latitude;
-        double defaultLongitude = DEFAULT_LatLng.longitude;
-//        tvLatitude.setText(String.valueOf(defaultLatitude));
-//        tvLongitude.setText(String.valueOf(defaultLongitude));
     }
 
 
@@ -230,58 +200,3 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public class TransportationFragment extends Fragment {
-//
-//    TabLayout tabLayout;
-//    ViewPager2 viewPager;
-//    TabPagerAdapter adapter;
-//    ArrayList<String> tabTitles;
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//    }
-//
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_transportation, container, false);
-//
-//        tabLayout = rootView.findViewById(R.id.transportation_tab_layout);
-//        viewPager = rootView.findViewById(R.id.transportationTabViewpager);
-//
-//        ArrayList<Fragment> fragments = new ArrayList<>();
-//        fragments.add(new Transportation_Tab1Fragment());
-//        fragments.add(new Transportation_Tab2Fragment());
-//        fragments.add(new Transportation_Tab3Fragment());
-//
-//        adapter = new TabPagerAdapter(requireActivity());
-//        adapter.setData(fragments);
-//        viewPager.setAdapter(adapter);
-//
-//        tabTitles = new ArrayList<>();
-//        tabTitles.add("Bus");
-//        tabTitles.add("Subway");
-//        tabTitles.add("Parking Lot");
-//
-//
-//        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText(tabTitles.get(position))).attach();
-//
-//
-//        return rootView;
-//    }
-//}

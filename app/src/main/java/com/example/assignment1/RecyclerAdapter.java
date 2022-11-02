@@ -72,26 +72,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     CardViewItemFragment fragmentCardViewItem = new CardViewItemFragment(item);
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                     transaction.replace(R.id.frame_layout, fragmentCardViewItem).commitAllowingStateLoss();
-//                    RecyclerItem item = itemsList.get(pos);
-//                    String category = item.getCategory();
-//                    String name = item.getName();
-//                    String district = item.getDistrict();
-//                    String address = item.getAddress();
-//                    String latitude = Double.toString(item.getLatitude());
-//                    String longitude = Double.toString(item.getLongitude());
-//                    String image = Integer.toString(item.getImage());
-//
-//                    Bundle bundle = new Bundle();
-//                    bundle.putString("name", name);
-//                    fragmentCardViewItem.setArguments(bundle);
-
-
-
                 }
             }
         });
-
-
     }
 
     @Override

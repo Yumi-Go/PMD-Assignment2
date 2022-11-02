@@ -60,42 +60,5 @@ public class Home_ViewPagerSliderAdapter extends RecyclerView.Adapter<Home_ViewP
         }
     };
 
-
 }
 
-
-//package com.example.mycafe;
-//
-//import androidx.annotation.NonNull;
-//import androidx.fragment.app.Fragment;
-//import androidx.fragment.app.FragmentActivity;
-//import androidx.viewpager2.adapter.FragmentStateAdapter;
-//
-//public class SliderAdapter extends FragmentStateAdapter {
-//
-//    public int mCount;
-//
-//    public SliderAdapter(FragmentActivity fa, int count) {
-//        super(fa);
-//        mCount = count;
-//    }
-//
-//    @NonNull
-//    @Override
-//    public Fragment createFragment(int position) {
-//        int index = getRealPosition(position);
-//
-//        if(index==0) return new MainMenuHomeFragment();
-//        else if(index==1) return new MainMenuOrderFragment();
-//        else if(index==2) return new MainMenuAccountFragment();
-//        else return new MainMenuStoresFragment();
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return 2000;
-//    }
-//
-//    public int getRealPosition(int position) { return position % mCount; }
-//
-//}
