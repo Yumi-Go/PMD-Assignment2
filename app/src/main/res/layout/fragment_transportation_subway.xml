@@ -10,5 +10,6 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/seoul_subway" />
+        android:src="@drawable/home_slider_img3"
+        />
 </FrameLayout>

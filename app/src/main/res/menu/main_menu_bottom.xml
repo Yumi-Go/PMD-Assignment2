@@ -7,19 +7,19 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/menu_food"
-        android:icon="@drawable/bottom_bar_icon_food"
-        android:title="@string/food" />
+        android:id="@+id/menu_account"
+        android:icon="@drawable/bottom_bar_icon_account"
+        android:title="@string/account" />
 
     <item
-        android:id="@+id/menu_entertainment"
-        android:icon="@drawable/bottom_bar_icon_entertainment"
-        android:title="@string/entertainment" />
+        android:id="@+id/menu_menu"
+        android:icon="@drawable/bottom_bar_icon_menu"
+        android:title="@string/menu" />
 
     <item
-        android:id="@+id/menu_transportation"
-        android:icon="@drawable/bottom_bar_icon_transportation"
-        android:title="@string/transportation" />
+        android:id="@+id/menu_cart"
+        android:icon="@drawable/bottom_bar_icon_cart"
+        android:title="@string/cart" />
 
 
 
