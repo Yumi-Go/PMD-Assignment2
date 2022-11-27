@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -65,20 +67,40 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId ()) {
-            case R.id.item1:
-//                startActivity (new Intent(this, MainActivity2.class));
+
+        Toast.makeText(this, "Selected Item: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+        switch (item.getItemId()) {
+            case R.id.search_item:
+                // do your code
                 return true;
-            case R.id.item2:
+            case R.id.upload_item:
+                // do your code
                 return true;
-            case R.id.item3:
+            case R.id.copy_item:
+                // do your code
+                return true;
+            case R.id.print_item:
+                // do your code
+                return true;
+            case R.id.share_item:
+                // do your code
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
+//        switch (item.getItemId ()) {
+//            case R.id.item1:
+////                startActivity (new Intent(this, MainActivity2.class));
+//                return true;
+//            case R.id.item2:
+//                return true;
+//            case R.id.item3:
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
     }
-
-
 
     class ItemSelectedListener implements BottomNavigationView.OnItemSelectedListener {
         @Override

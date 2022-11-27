@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Assignment 2: Pizza order app</string>
-    <string name="city_name">Seoul</string>
+    <string name="app_name">MTU Pizza</string>
     <string name="home">Home</string>
     <string name="account">Account</string>
     <string name="menu">Menu</string>
