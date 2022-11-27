@@ -2,13 +2,6 @@
     <string name="app_name">Assignment 2: Pizza order app</string>
     <string name="city_name">Seoul</string>
     <string name="home">Home</string>
-    <string name="home_cardview_text">
-        * Country: South Korea\n
-        * Area: Total	605.21 km2 (233.67 sq mi)\n
-        * Population(2021): 9,765,869\n
-        * Density: 16,000/km2 (42,000/sq mi)\n
-        * Website: http://www.seoul.go.kr
-    </string>
     <string name="account">Account</string>
     <string name="menu">Menu</string>
     <string name="cart">Cart</string>

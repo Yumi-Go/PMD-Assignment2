@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
-
+import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Stack;
@@ -31,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+//        getSupportActionBar().setIcon(R.drawable.pizza_logo);
+//        getSupportActionBar().setDisplayUseLogoEnabled(true);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frame_layout, fragmentHome).commitAllowingStateLoss();
 
@@ -40,8 +50,35 @@ public class MainActivity extends AppCompatActivity {
         fragmentStack = new Stack<>();
         fragmentStack.push(fragmentHome);
 
-
     }
+
+    // 메뉴 리소스 XML의 내용을 앱바(App Bar)에 반영
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate (R.menu.menu_toolbar, menu);
+
+        return true;
+    }
+
+    //앱바(App Bar)에 표시된 액션 또는 오버플로우 메뉴가 선택되면
+    //액티비티의 onOptionsItemSelected() 메서드가 호출
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId ()) {
+            case R.id.item1:
+//                startActivity (new Intent(this, MainActivity2.class));
+                return true;
+            case R.id.item2:
+                return true;
+            case R.id.item3:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 
     class ItemSelectedListener implements BottomNavigationView.OnItemSelectedListener {
         @Override
