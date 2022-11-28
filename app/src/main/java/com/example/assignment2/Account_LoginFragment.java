@@ -29,7 +29,7 @@ public class Account_LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_account_tab1, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_account_tab1_login, container, false);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         initView();
