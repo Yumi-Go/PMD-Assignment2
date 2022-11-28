@@ -22,6 +22,6 @@ public class Transportation_Subway extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_transportation_subway, container, false);
+        return inflater.inflate(R.layout.fragment_cart_subway, container, false);
     }
 }

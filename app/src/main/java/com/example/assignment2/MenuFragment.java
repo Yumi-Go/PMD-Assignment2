@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 
 
-public class EntertainmentFragment extends Fragment {
+public class MenuFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager2 viewPager;
@@ -31,15 +31,15 @@ public class EntertainmentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_entertainment, container, false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_menu, container, false);
 
         tabLayout = rootView.findViewById(R.id.entertainment_tab_layout);
         viewPager = rootView.findViewById(R.id.entertainmentTabViewpager);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(new Entertainment_Tab1Fragment());
-        fragments.add(new Entertainment_Tab2Fragment());
-        fragments.add(new Entertainment_Tab3Fragment());
+        fragments.add(new Menu_Tab1Fragment());
+        fragments.add(new Menu_Tab2Fragment());
+        fragments.add(new Menu_Tab3Fragment());
 
         adapter = new TabPagerAdapter(requireActivity());
         adapter.setData(fragments);

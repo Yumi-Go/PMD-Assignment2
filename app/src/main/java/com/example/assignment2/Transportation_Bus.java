@@ -27,7 +27,7 @@ public class Transportation_Bus extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_transportation_bus, container, false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_cart_bus, container, false);
         return rootView;
     }
 }

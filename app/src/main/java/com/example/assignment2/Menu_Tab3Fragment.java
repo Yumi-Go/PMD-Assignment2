@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Entertainment_Tab3Fragment extends Fragment {
+public class Menu_Tab3Fragment extends Fragment {
 
     RecyclerView recyclerView;
     List<RecyclerItem> itemsList = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Entertainment_Tab3Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_entertainment_tab3, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_menu_tab3, container, false);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         initView();

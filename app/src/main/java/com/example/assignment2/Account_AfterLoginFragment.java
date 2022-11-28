@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Food_Tab3Fragment extends Fragment {
+public class Account_AfterLoginFragment extends Fragment {
 
     RecyclerView recyclerView;
     List<RecyclerItem> itemsList = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Food_Tab3Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_food_tab3, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_account_tab3, container, false);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         initView();

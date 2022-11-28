@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     private final FragmentManager fragmentManager = getSupportFragmentManager();
     private HomeFragment fragmentHome = new HomeFragment();
-    private FoodFragment fragmentFood = new FoodFragment();
-    private EntertainmentFragment fragmentEntertainment = new EntertainmentFragment();
-    private TransportationFragment fragmentTransportation = new TransportationFragment();
+    private AccountFragment fragmentAccount = new AccountFragment();
+    private MenuFragment fragmentMenu = new MenuFragment();
+    private CartFragment fragmentCart = new CartFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,13 +111,13 @@ public class MainActivity extends AppCompatActivity {
                     transaction.replace(R.id.frame_layout, fragmentHome).commitAllowingStateLoss();
                     break;
                 case R.id.menu_account:
-                    transaction.replace(R.id.frame_layout, fragmentFood).commitAllowingStateLoss();
+                    transaction.replace(R.id.frame_layout, fragmentAccount).commitAllowingStateLoss();
                     break;
                 case R.id.menu_menu:
-                    transaction.replace(R.id.frame_layout, fragmentEntertainment).commitAllowingStateLoss();
+                    transaction.replace(R.id.frame_layout, fragmentMenu).commitAllowingStateLoss();
                     break;
                 case R.id.menu_cart:
-                    transaction.replace(R.id.frame_layout, fragmentTransportation).commitAllowingStateLoss();
+                    transaction.replace(R.id.frame_layout, fragmentCart).commitAllowingStateLoss();
                     break;
             }
             return true;

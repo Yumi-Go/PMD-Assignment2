@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Food_Tab1Fragment extends Fragment {
+public class Account_LoginFragment extends Fragment {
 
     RecyclerView recyclerView;
     List<RecyclerItem> itemsList = new ArrayList<>();
@@ -30,7 +29,7 @@ public class Food_Tab1Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_food_tab1, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_account_tab1, container, false);
 
         recyclerView = rootView.findViewById(R.id.recyclerView);
         initView();

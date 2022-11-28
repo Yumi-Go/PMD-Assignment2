@@ -43,7 +43,7 @@ import com.google.android.gms.tasks.Task;
 
 import java.util.Objects;
 
-public class TransportationFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+public class CartFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     GoogleMap gMap;
     private Marker currentMarker = null;
@@ -56,7 +56,7 @@ public class TransportationFragment extends Fragment implements OnMapReadyCallba
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_transportation, container, false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_cart, container, false);
 
         btnReset = rootView.findViewById(R.id.btn_reset_marker);
         btnGmap = rootView.findViewById(R.id.btn_googleMap);

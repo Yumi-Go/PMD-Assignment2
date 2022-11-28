@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Entertainment_Tab3Fragment">
+    tools:context=".Account_AfterLoginFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:scrollbars="vertical"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </FrameLayout>

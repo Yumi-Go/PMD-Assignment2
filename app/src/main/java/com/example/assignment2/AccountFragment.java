@@ -2,14 +2,10 @@ package com.example.assignment2;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -17,10 +13,9 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
-public class FoodFragment extends Fragment {
+public class AccountFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager2 viewPager;
@@ -38,15 +33,15 @@ public class FoodFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_food, container, false);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_account, container, false);
 
         tabLayout = rootView.findViewById(R.id.food_tab_layout);
         viewPager = rootView.findViewById(R.id.foodTabViewpager);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(new Food_Tab1Fragment());
-        fragments.add(new Food_Tab2Fragment());
-        fragments.add(new Food_Tab3Fragment());
+        fragments.add(new Account_LoginFragment());
+        fragments.add(new Account_RegisterFragment());
+        fragments.add(new Account_AfterLoginFragment());
 
         adapter = new TabPagerAdapter(requireActivity());
         adapter.setData(fragments);
