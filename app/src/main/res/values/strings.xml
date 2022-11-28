@@ -4,6 +4,26 @@
     <string name="account">Account</string>
     <string name="menu">Menu</string>
     <string name="cart">Cart</string>
+
+    <string name="login">Log In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="nametextview">nameTextview</string>
     <string name="categorytextview">categoryTextview</string>
     <string name="districttextview">districtTextview</string>
