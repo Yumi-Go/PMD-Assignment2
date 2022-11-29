@@ -41,16 +41,16 @@ public class AccountFragment extends Fragment {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new Account_LoginFragment());
         fragments.add(new Account_RegisterFragment());
-        fragments.add(new Account_AfterLoginFragment());
+//        fragments.add(new Account_AfterLoginFragment());
 
         adapter = new TabPagerAdapter(requireActivity());
         adapter.setData(fragments);
         viewPager.setAdapter(adapter);
 
         tabTitles = new ArrayList<>();
-        tabTitles.add("Restaurant");
-        tabTitles.add("Cafe & Bakery");
-        tabTitles.add("Pub & Bar");
+        tabTitles.add("Lgo In");
+        tabTitles.add("Register");
+//        tabTitles.add("Pub & Bar");
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText(tabTitles.get(position))).attach();
 
