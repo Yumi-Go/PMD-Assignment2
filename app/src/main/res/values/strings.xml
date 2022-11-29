@@ -6,6 +6,8 @@
     <string name="cart">Cart</string>
 
     <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
 
