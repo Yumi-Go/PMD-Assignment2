@@ -1,7 +1,6 @@
-package com.example.assignment2;
+package com.example.assignment2.Adapter;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,10 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.assignment2.CardViewItemFragment;
+import com.example.assignment2.R;
+import com.example.assignment2.RecyclerItem;
 
 import java.util.List;
 

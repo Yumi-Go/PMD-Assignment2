@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.Cart;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -25,6 +25,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.assignment2.R;
+import com.example.assignment2.Transportation_Bus;
+import com.example.assignment2.Transportation_Subway;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;

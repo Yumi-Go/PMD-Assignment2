@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.Account;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,16 +9,11 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.assignment2.R;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 
 public class Account_LoginFragment extends Fragment {

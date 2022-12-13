@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.Home;
 
 import android.os.Bundle;
 
@@ -11,6 +11,9 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.assignment2.R;
+
 import java.util.ArrayList;
 import me.relex.circleindicator.CircleIndicator3;
 

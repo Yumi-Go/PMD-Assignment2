@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

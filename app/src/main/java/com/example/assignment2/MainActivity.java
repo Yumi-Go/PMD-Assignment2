@@ -13,6 +13,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.assignment2.Account.AccountFragment;
+import com.example.assignment2.Cart.CartFragment;
+import com.example.assignment2.Home.HomeFragment;
+import com.example.assignment2.Menu.MenuFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Stack;

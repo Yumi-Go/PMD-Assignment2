@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.Home;
 
 public class Home_ViewPagerSliderItems {
 
