@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_login_title"
+            android:id="@+id/tv_register_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/register"

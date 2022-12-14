@@ -37,8 +37,8 @@ public class AccountFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_account, container, false);
 
-        tabLayout = rootView.findViewById(R.id.food_tab_layout);
-        viewPager = rootView.findViewById(R.id.foodTabViewpager);
+        tabLayout = rootView.findViewById(R.id.account_tab_layout);
+        viewPager = rootView.findViewById(R.id.accountTabViewpager);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new Account_LoginFragment());

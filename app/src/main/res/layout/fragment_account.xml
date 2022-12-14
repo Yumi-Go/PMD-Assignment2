@@ -24,7 +24,7 @@
 
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/food_tab_layout"
+        android:id="@+id/account_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,19 +33,19 @@
         app:tabBackground="@drawable/tab_selector">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/foodTab1"
+            android:id="@+id/accountTab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/foodTab2"
+            android:id="@+id/accountTab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/foodTab3"
+            android:id="@+id/accountTab3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
@@ -53,12 +53,12 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/foodTabViewpager"
+        android:id="@+id/accountTabViewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/food_tab_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/account_tab_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
