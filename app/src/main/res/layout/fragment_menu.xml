@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu.MenuFragment">
+    tools:context=".View.Menu.MenuFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/menu_tab_layout"
@@ -16,19 +16,25 @@
         app:tabBackground="@drawable/tab_selector">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/entertainmentTab1"
+            android:id="@+id/menuTab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/entertainmentTab2"
+            android:id="@+id/menuTab2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/entertainmentTab3"
+            android:id="@+id/menuTab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/menuTab4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />

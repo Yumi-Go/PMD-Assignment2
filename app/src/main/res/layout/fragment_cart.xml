@@ -6,14 +6,14 @@
     android:gravity="top|center_horizontal"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".Cart.CartFragment">
+    tools:context=".View.Cart.CartFragment">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/transMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        tools:context=".Cart.CartFragment" />
+        tools:context=".View.Cart.CartFragment" />
 
     <Button
         android:id="@+id/btn_reset_marker"

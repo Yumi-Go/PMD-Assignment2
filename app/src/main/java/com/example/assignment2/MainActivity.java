@@ -14,10 +14,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.assignment2.Account.AccountFragment;
-import com.example.assignment2.Cart.CartFragment;
-import com.example.assignment2.Home.HomeFragment;
-import com.example.assignment2.Menu.MenuFragment;
+import com.example.assignment2.View.Account.AccountFragment;
+import com.example.assignment2.View.Cart.CartFragment;
+import com.example.assignment2.View.Home.HomeFragment;
+import com.example.assignment2.View.Menu.MenuFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Stack;
@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             switch (menuItem.getItemId()) {
                 case R.id.menu_home:
                     transaction.replace(R.id.frame_layout, fragmentHome).commitAllowingStateLoss();
+//                    MenuPresenter mVideoPresenter = new MenuPresenter((MenuContract.View) fragmentHome);
                     break;
                 case R.id.menu_account:
                     transaction.replace(R.id.frame_layout, fragmentAccount).commitAllowingStateLoss();
