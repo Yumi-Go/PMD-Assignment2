@@ -35,22 +35,26 @@ public class MenuFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_menu, container, false);
 
-        tabLayout = rootView.findViewById(R.id.entertainment_tab_layout);
-        viewPager = rootView.findViewById(R.id.entertainmentTabViewpager);
+        tabLayout = rootView.findViewById(R.id.menu_tab_layout);
+        viewPager = rootView.findViewById(R.id.menuTabViewpager);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new Menu_Tab1Fragment());
         fragments.add(new Menu_Tab2Fragment());
         fragments.add(new Menu_Tab3Fragment());
+        fragments.add(new Menu_Tab4Fragment());
+
 
         adapter = new TabPagerAdapter(requireActivity());
         adapter.setData(fragments);
         viewPager.setAdapter(adapter);
 
         tabTitles = new ArrayList<>();
-        tabTitles.add("Park");
-        tabTitles.add("History");
-        tabTitles.add("Shopping");
+        tabTitles.add("Pizza");
+        tabTitles.add("Deal");
+        tabTitles.add("Side");
+        tabTitles.add("Drink");
+
 
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText(tabTitles.get(position))).attach();
