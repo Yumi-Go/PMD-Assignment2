@@ -46,12 +46,13 @@ public class Account_LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 DBhandler dbHandler = new DBhandler(getContext());
-
                 boolean isExist = dbHandler.checkUserExist(emailEditText.getText().toString(), passwordEditText.getText().toString());
-
                 if(isExist){
+                    Bundle bundle = new Bundle();
+                    bundle.putString("email", emailEditText.getText().toString());
                     FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    fragmentAfterLogin.setArguments(bundle);
                     transaction.replace(R.id.frame_layout, fragmentAfterLogin).commitAllowingStateLoss();
                     Toast.makeText(requireActivity().getApplicationContext(), "Login Successfully",Toast.LENGTH_SHORT).show();
 

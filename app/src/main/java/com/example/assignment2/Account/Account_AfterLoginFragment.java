@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -23,8 +24,8 @@ import java.util.List;
 
 public class Account_AfterLoginFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    List<RecyclerItem> itemsList = new ArrayList<>();
+    TextView nameTextView;
+    String name;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,17 @@ public class Account_AfterLoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_account_tab3_afterlogin, container, false);
 
+        nameTextView = rootView.findViewById(R.id.nameTv);
 
-        DBhandler db = new DBhandler(getContext());
+        DBhandler dbHandler = new DBhandler(getContext());
+
+        if (getArguments() != null)
+        {
+            String email = getArguments().getString("email"); // 프래그먼트1에서 받아온 값 넣기
+            name = dbHandler.GetNameByEmail(email);
+            nameTextView.setText(name);
+        }
+
         return rootView;
     }
 
