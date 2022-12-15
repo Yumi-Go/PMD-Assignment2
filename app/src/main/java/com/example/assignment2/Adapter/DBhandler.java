@@ -70,12 +70,27 @@ public class DBhandler extends SQLiteOpenHelper {
         return userList;
     }
 
+
+    public String GetNameByEmail(String email){
+        SQLiteDatabase db = this.getWritableDatabase();
+//        String query = "SELECT name, email FROM "+ TABLE_NAME;
+        Cursor cursor = db.query(TABLE_NAME, new String[]{COL2_NAME},
+                COL3_EMAIL + "=?", new String[]{email},null, null, null, null);
+        String name = "";
+        if (cursor.moveToNext()){
+            name = cursor.getString(cursor.getColumnIndexOrThrow(COL2_NAME));
+        }
+        cursor.close();
+        return name;
+    }
+
+
     public ArrayList<HashMap<String, String>> GetUserById(int userid){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<HashMap<String, String>> userList = new ArrayList<>();
         String query = "SELECT name, email FROM "+ TABLE_NAME;
         Cursor cursor = db.query(TABLE_NAME, new String[]{COL2_NAME, COL3_EMAIL},
-                COL1_ID + "=?",new String[]{String.valueOf(userid)},null, null, null, null);
+                COL1_ID + "=?", new String[]{String.valueOf(userid)},null, null, null, null);
         if (cursor.moveToNext()){
             HashMap<String,String> user = new HashMap<>();
             user.put("name",cursor.getString(cursor.getColumnIndexOrThrow(COL2_NAME)));
@@ -103,7 +118,21 @@ public class DBhandler extends SQLiteOpenHelper {
     }
 
 
+    public boolean checkUserExist(String email, String password){
+        String[] columns = {"email"};
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        String selection = "email=? and password=?";
+        String[] selectionArgs = {email, password};
+
+        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+
+        cursor.close();
+        close();
+
+        return count > 0;
+    }
 
 
 

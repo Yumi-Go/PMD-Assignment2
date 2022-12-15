@@ -5,11 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.assignment2.Adapter.DBhandler;
 import com.example.assignment2.R;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -19,10 +22,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Account_LoginFragment extends Fragment {
 
     Button btnLogin;
-    private SignInButton btn_google;
-    private FirebaseAuth auth;
-    private GoogleApiClient googleApiClient;
-    private static final int REQ_SIGN_GOOGLE = 100;
+    EditText emailEditText, passwordEditText;
+    Account_AfterLoginFragment fragmentAfterLogin = new Account_AfterLoginFragment();
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,15 +37,28 @@ public class Account_LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_account_tab1_login, container, false);
 
+        emailEditText = rootView.findViewById(R.id.et_email);
+        passwordEditText = rootView.findViewById(R.id.et_password);
+
         btnLogin = rootView.findViewById(R.id.btn_login);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                Account_AfterLoginFragment fragmentAfterLogin = new Account_AfterLoginFragment();
-                transaction.replace(R.id.frame_layout, fragmentAfterLogin).commitAllowingStateLoss();
+                DBhandler dbHandler = new DBhandler(getContext());
+
+                boolean isExist = dbHandler.checkUserExist(emailEditText.getText().toString(), passwordEditText.getText().toString());
+
+                if(isExist){
+                    FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    transaction.replace(R.id.frame_layout, fragmentAfterLogin).commitAllowingStateLoss();
+                    Toast.makeText(requireActivity().getApplicationContext(), "Login Successfully",Toast.LENGTH_SHORT).show();
+
+                } else {
+                    passwordEditText.setText(null);
+                    Toast.makeText(requireActivity().getApplicationContext(), "Login failed. Invalid username or password.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return rootView;

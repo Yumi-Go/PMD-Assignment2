@@ -20,7 +20,7 @@ public class Account_RegisterFragment extends Fragment {
 
     private static final String TAG = "RegisterFragment";
     EditText nameEditText, emailEditText, passwordEditText;
-    Account_AfterLoginFragment fragmentAfterLogin = new Account_AfterLoginFragment();
+    Account_LoginFragment fragmentLogin = new Account_LoginFragment();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,9 +51,9 @@ public class Account_RegisterFragment extends Fragment {
                 FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.frame_layout, fragmentAfterLogin).commitAllowingStateLoss();
+                transaction.replace(R.id.frame_layout, fragmentLogin).commitAllowingStateLoss();
 
-                Toast.makeText(requireActivity().getApplicationContext(), "Details Inserted Successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireActivity().getApplicationContext(), "Registered Successfully",Toast.LENGTH_SHORT).show();
 
 
 
