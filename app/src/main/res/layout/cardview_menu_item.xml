@@ -26,7 +26,7 @@
             android:contentDescription="TODO" />
 
         <TextView
-            android:id="@+id/item1_textview"
+            android:id="@+id/item1_categoryTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -36,7 +36,7 @@
 
 
         <TextView
-            android:id="@+id/item2_textview"
+            android:id="@+id/item2_nameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
@@ -46,21 +46,12 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/item3_textview"
+            android:id="@+id/item3_priceTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:gravity="center_horizontal"
-            android:text="@string/districttextview"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/item4_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:gravity="center_horizontal"
-            android:text="€"
+            android:text="@string/pricetextview"
             android:textSize="14sp" />
 
     </LinearLayout>

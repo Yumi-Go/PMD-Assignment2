@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.assignment2.Presenter.RecyclerAdapter;
+import com.example.assignment2.Presenter.MenuRecyclerAdapter;
 import com.example.assignment2.R;
 import com.example.assignment2.Model.MenuRecyclerItem;
 
@@ -43,7 +43,7 @@ public class Menu_Tab4Fragment extends Fragment {
     private void initView() {
         GridLayoutManager layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerAdapter adapter = new RecyclerAdapter(itemsList);
+        MenuRecyclerAdapter adapter = new MenuRecyclerAdapter(itemsList);
         recyclerView.setAdapter(adapter);
     }
 

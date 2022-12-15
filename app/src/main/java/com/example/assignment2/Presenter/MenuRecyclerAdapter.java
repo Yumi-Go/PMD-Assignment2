@@ -14,32 +14,32 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.assignment2.MenuDetailFragment;
+import com.example.assignment2.View.Menu.MenuDetailFragment;
 import com.example.assignment2.R;
 import com.example.assignment2.Model.MenuRecyclerItem;
 
 import java.util.List;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class MenuRecyclerAdapter extends RecyclerView.Adapter<MenuRecyclerAdapter.ViewHolder> {
 
     Context context;
     List<MenuRecyclerItem> itemsList;
 
-    public RecyclerAdapter(List<MenuRecyclerItem> itemsList) {
+    public MenuRecyclerAdapter(List<MenuRecyclerItem> itemsList) {
         this.itemsList = itemsList;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
         ImageView imageView;
-        TextView categoryTextview, nameTextview, districtTextview;
+        TextView categoryTextview, nameTextview, priceTextview;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = (CardView) itemView;
-            categoryTextview = itemView.findViewById(R.id.item1_textview);
-            nameTextview = itemView.findViewById(R.id.item2_textview);
-            districtTextview = itemView.findViewById(R.id.item3_textview);
+            categoryTextview = itemView.findViewById(R.id.item1_categoryTv);
+            nameTextview = itemView.findViewById(R.id.item2_nameTv);
+            priceTextview = itemView.findViewById(R.id.item3_priceTv);
             imageView = itemView.findViewById(R.id.iv_photo);
         }
     }
@@ -62,6 +62,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         MenuRecyclerItem item = itemsList.get(position);
         holder.categoryTextview.setText(item.getCategory());
         holder.nameTextview.setText(item.getName());
+        holder.priceTextview.setText(item.priceToString(item.getPrice()));
         holder.imageView.setImageResource(item.getImage());
 
         holder.itemView.setOnClickListener (new View.OnClickListener() {

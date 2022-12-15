@@ -12,6 +12,9 @@
     <color name="dark_orange">#FF9800</color>
     <color name="primary_color">#006D9F</color>
     <color name="primary_variant_color">#00293C</color>
-    <color name="unselected_tab">#E6FCFF</color>
-    <color name="selected_tab">#A6F6FF</color>
+    <color name="unselected_tab">#EFEFEF</color>
+    <color name="selected_tab">#E6FCFF</color>
+    <!--    <color name="unselected_tab">#E6FCFF</color>-->
+    <!--    <color name="selected_tab">#BAF7FF</color>-->
+
 </resources>

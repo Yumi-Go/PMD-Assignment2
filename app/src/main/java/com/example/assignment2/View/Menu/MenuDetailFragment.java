@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.View.Menu;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,19 +10,18 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.assignment2.Model.MenuRecyclerItem;
+import com.example.assignment2.R;
 import com.google.android.gms.maps.GoogleMap;
 
 
 public class MenuDetailFragment extends Fragment {
 
-    String category, name, description;
-    int price, image;
+    String category, name, price, description;
+    int image;
     MenuRecyclerItem item;
 
     ImageView introImageView;
-    TextView nameTextView, categoryTextView, descriptionTextView, addressTextView;
-
-    GoogleMap gMap;
+    TextView nameTextView, priceTextView, descriptionTextView;
 
     public MenuDetailFragment(MenuRecyclerItem item) {
         this.item = item;
@@ -40,16 +39,17 @@ public class MenuDetailFragment extends Fragment {
 
         name = item.getName();
         category = item.getCategory();
-        price = item.getPrice();
+        price = item.priceToString(item.getPrice());
         description = item.getDescription();
         image = item.getImage();
 
         nameTextView = rootView.findViewById(R.id.nameTv);
-        descriptionTextView = rootView.findViewById(R.id.descriptionTv);
-        addressTextView = rootView.findViewById(R.id.addressTv);
         introImageView = rootView.findViewById(R.id.introIv);
+        descriptionTextView = rootView.findViewById(R.id.descriptionTv);
+        priceTextView = rootView.findViewById(R.id.priceTv);
 
         nameTextView.setText(name);
+        priceTextView.setText(price);
         descriptionTextView.setText(description);
         introImageView.setImageResource(image);
 

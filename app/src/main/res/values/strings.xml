@@ -15,20 +15,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <string name="nametextview">nameTextview</string>
-    <string name="categorytextview">categoryTextview</string>
-    <string name="districttextview">districtTextview</string>
+    <string name="nametextview">name</string>
+    <string name="categorytextview">category</string>
+    <string name="pricetextview">district</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
     <string name="reset_marker">Reset Center to My Location</string>

@@ -5,10 +5,11 @@ public class MenuRecyclerItem {
     String category, name, description;
     int price, image;
 
-    public MenuRecyclerItem(String category, String name, int price, int image) {
+    public MenuRecyclerItem(String category, String name, int price, String description, int image) {
         this.category = category;
         this.name = name;
         this.price = price;
+        this.description = description;
         this.image = image;
     }
 
@@ -28,16 +29,14 @@ public class MenuRecyclerItem {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
-    }
+    public int getPrice() { return price; }
 
-    public String getPriceWithEuroSymbol(int price) {
-        return getPrice() + " €";
-    }
-
-    public void setDistrict(int price) {
+    public void setPrice(int price) {
         this.price = price;
+    }
+
+    public String priceToString(int price) {
+        return getPrice() + " €";
     }
 
     public String getDescription() {
