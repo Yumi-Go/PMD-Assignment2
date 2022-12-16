@@ -67,8 +67,8 @@ public class itemDBhandler extends SQLiteOpenHelper {
             item.put(COL1_ID, cursor.getString(cursor.getColumnIndexOrThrow(COL1_ID)));
             item.put(COL2_CATEGORY, cursor.getString(cursor.getColumnIndexOrThrow(COL2_CATEGORY)));
             item.put(COL3_NAME, cursor.getString(cursor.getColumnIndexOrThrow(COL3_NAME)));
-            item.put(COL4_QUANTITY, cursor.getString(cursor.getColumnIndexOrThrow(COL4_QUANTITY)));
-            item.put(COL5_PRICE, cursor.getString(cursor.getColumnIndexOrThrow(COL5_PRICE)));
+            item.put(COL4_QUANTITY, "x " + cursor.getString(cursor.getColumnIndexOrThrow(COL4_QUANTITY)));
+            item.put(COL5_PRICE, cursor.getString(cursor.getColumnIndexOrThrow(COL5_PRICE)) + " €");
             itemList.add(item);
         }
         return itemList;

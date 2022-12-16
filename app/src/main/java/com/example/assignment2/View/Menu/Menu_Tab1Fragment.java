@@ -52,5 +52,7 @@ public class Menu_Tab1Fragment extends Fragment {
         itemsList.add(new MenuRecyclerItem(getString(R.string.pizza), getString(R.string.cheese_pizza), 12, getString(R.string.cheese_pizza_description), R.drawable.cheesepizza));
         itemsList.add(new MenuRecyclerItem(getString(R.string.pizza), getString(R.string.pepperoni_pizza),13, getString(R.string.pepperoni_pizza_description), R.drawable.pepperonipizza));
         itemsList.add(new MenuRecyclerItem(getString(R.string.pizza), getString(R.string.margherita_pizza),14, getString(R.string.margherita_pizza_description), R.drawable.margheritapizza));
+        itemsList.add(new MenuRecyclerItem(getString(R.string.pizza), getString(R.string.chicken_pizza),15, getString(R.string.chicken_pizza_description), R.drawable.chickenpizza));
+
     }
 }

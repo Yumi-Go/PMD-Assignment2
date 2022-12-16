@@ -39,8 +39,8 @@ public class CartFragment extends Fragment {
 
         cartLv = (ListView) rootView.findViewById(R.id.cart_list);
         ListAdapter adapter = new SimpleAdapter(getContext(), itemList,
-                R.layout.list_row,new String[]{"id","category","name", "quantity", "price"},
-                new int[]{R.id.id, R.id.category, R.id.name, R.id.quantity, R.id.price});
+                R.layout.list_row,new String[]{"name", "quantity", "price"},
+                new int[]{R.id.name, R.id.quantity, R.id.price});
         cartLv.setAdapter(adapter);
 
         totalPriceTv = rootView.findViewById(R.id.total_price);

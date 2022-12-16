@@ -22,10 +22,21 @@
     <string name="cheese_pizza">Cheese Pizza</string>
     <string name="pepperoni_pizza">Pepperoni Pizza</string>
     <string name="margherita_pizza">Margherita Pizza</string>
+    <string name="chicken_pizza">Chicken Pizza</string>
 
     <string name="cheese_pizza_description">This is Cheese Pizza!</string>
     <string name="pepperoni_pizza_description">This is Pepperoni Pizza!</string>
     <string name="margherita_pizza_description">This is Margherita Pizza!</string>
+    <string name="chicken_pizza_description">This is Chicken Pizza!</string>
+
+    <string name="double_deal">Double Deal</string>
+    <string name="party_deal">Party Deal</string>
+    <string name="student_deal">Student Deal</string>
+
+    <string name="double_deal_description">This is Double Deal!</string>
+    <string name="party_deal_description">This is Party Deal!</string>
+    <string name="student_deal_description">This is Student Deal!</string>
+
     <string name="total_label">Total :</string>
     <string name="back">Back</string>
     <string name="hello">Hello</string>
