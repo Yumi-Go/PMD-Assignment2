@@ -52,7 +52,8 @@ public class Account_LoginFragment extends Fragment {
                     fragmentAfterLogin.setArguments(bundle);
                     transaction.replace(R.id.frame_layout, fragmentAfterLogin).commitAllowingStateLoss();
                     Toast.makeText(requireActivity().getApplicationContext(), "Login Successfully",Toast.LENGTH_SHORT).show();
-
+                    emailEditText.setText(null);
+                    passwordEditText.setText(null);
                 } else {
                     passwordEditText.setText(null);
                     Toast.makeText(requireActivity().getApplicationContext(), "Login failed. Invalid username or password.", Toast.LENGTH_SHORT).show();

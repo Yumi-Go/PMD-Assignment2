@@ -1,21 +1,33 @@
 package com.example.assignment2.View.Account;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.example.assignment2.MainActivity;
 import com.example.assignment2.Presenter.userDBhandler;
 import com.example.assignment2.R;
+import com.example.assignment2.View.Home.HomeFragment;
+import com.example.assignment2.View.Menu.MenuFragment;
+
+import java.util.Locale;
 
 
 public class Account_AfterLoginFragment extends Fragment {
 
     TextView nameTextView;
     String name;
+
+//    HomeFragment fragmentHome = new HomeFragment();
+    Intent intent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,10 +45,23 @@ public class Account_AfterLoginFragment extends Fragment {
 
         if (getArguments() != null)
         {
-            String email = getArguments().getString("email"); // 프래그먼트1에서 받아온 값 넣기
+            String email = getArguments().getString("email");
             name = dbHandler.GetNameByEmail(email);
-            nameTextView.setText(name);
+            nameTextView.setText(name.toUpperCase(Locale.ROOT) + " :)");
         }
+
+        Button homeBtn = (Button) rootView.findViewById(R.id.btnHome);
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+//                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+//                FragmentTransaction transaction = fragmentManager.beginTransaction();
+//                transaction.replace(R.id.frame_layout, fragmentHome).commitAllowingStateLoss();
+            }
+        });
+
 
         return rootView;
     }

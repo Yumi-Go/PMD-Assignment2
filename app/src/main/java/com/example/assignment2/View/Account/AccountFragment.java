@@ -43,40 +43,19 @@ public class AccountFragment extends Fragment {
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new Account_LoginFragment());
         fragments.add(new Account_RegisterFragment());
-//        fragments.add(new Account_AfterLoginFragment());
 
         adapter = new TabPagerAdapter(requireActivity());
         adapter.setData(fragments);
         viewPager.setAdapter(adapter);
 
         tabTitles = new ArrayList<>();
-        tabTitles.add("Lgo In");
-        tabTitles.add("Register");
-//        tabTitles.add("Pub & Bar");
+        tabTitles.add(getString(R.string.login));
+        tabTitles.add(getString(R.string.register));
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText(tabTitles.get(position))).attach();
 
         return rootView;
     }
 
-//    @Override
-//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-//        inflater.inflate(R.menu.menu_toolbar, menu);
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.item1:
-//            case R.id.item2:
-//            case R.id.item3: {
-//                // navigate to settings screen
-//                return true;
-//            }// save profile changes
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//
-//    }
 
 }

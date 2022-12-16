@@ -1,7 +1,11 @@
 package com.example.assignment2.View.Home;
 
+import android.Manifest;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
@@ -13,18 +17,27 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.assignment2.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import me.relex.circleindicator.CircleIndicator3;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private Home_ViewPagerSliderAdapter adapter;
     private ViewPager2 viewPager;
     private CircleIndicator3 mIndicator;
     private Handler sliderHandler = new Handler();
     private int slideNumber = 0;
+    GoogleMap gMap;
+    double latitude, longitude;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +87,24 @@ public class HomeFragment extends Fragment {
                 sliderHandler.postDelayed(sliderRunnable, 2000); // each slide duration = 2 seconds
             }
         });
+
+        ActivityResultLauncher<String[]> locationPermissionRequest =
+                registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
+//                    Boolean fineLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false);
+//                    Boolean coarseLocationGranted = result.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION,false);
+//                    if (coarseLocationGranted != null && coarseLocationGranted) {
+//                        Toast.makeText(getActivity(), "Only approximate location access granted", Toast.LENGTH_SHORT).show();
+//                    } else {
+//                        Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
+//                    }
+                });
+
+        locationPermissionRequest.launch(new String[] {
+                Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION});
+
+        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.locationMap);
+        mapFragment.getMapAsync(this);
+
         return rootView;
     }
 
@@ -97,5 +128,19 @@ public class HomeFragment extends Fragment {
     }
 
 
+    @Override
+    public void onInfoWindowClick(@NonNull Marker marker) {
 
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        latitude = 51.88668372020879;
+        longitude = -8.533569;
+        gMap = googleMap;
+        LatLng location = new LatLng(latitude, longitude);
+        gMap.addMarker(new MarkerOptions().position(location).title("MTU Pizza"));
+        gMap.setOnInfoWindowClickListener(this);
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 13));
+    }
 }

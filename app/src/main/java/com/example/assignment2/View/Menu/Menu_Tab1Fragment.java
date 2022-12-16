@@ -49,8 +49,8 @@ public class Menu_Tab1Fragment extends Fragment {
     }
 
     private void initItems() {
-        itemsList.add(new MenuRecyclerItem("Pizza", "Cheese Pizza", 12, "This is Cheese Pizza!", R.drawable.cheesepizza));
-        itemsList.add(new MenuRecyclerItem("Pizza", "Pepperoni Pizza",13, "This is Pepperoni Pizza!", R.drawable.pepperonipizza));
-        itemsList.add(new MenuRecyclerItem("Pizza", "Margherita Pizza",14, "This is Margherita Pizza!", R.drawable.margheritapizza));
+        itemsList.add(new MenuRecyclerItem(getString(R.string.pizza), getString(R.string.cheese_pizza), 12, getString(R.string.cheese_pizza_description), R.drawable.cheesepizza));
+        itemsList.add(new MenuRecyclerItem(getString(R.string.pizza), getString(R.string.pepperoni_pizza),13, getString(R.string.pepperoni_pizza_description), R.drawable.pepperonipizza));
+        itemsList.add(new MenuRecyclerItem(getString(R.string.pizza), getString(R.string.margherita_pizza),14, getString(R.string.margherita_pizza_description), R.drawable.margheritapizza));
     }
 }

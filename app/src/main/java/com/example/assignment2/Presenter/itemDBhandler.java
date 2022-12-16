@@ -74,31 +74,54 @@ public class itemDBhandler extends SQLiteOpenHelper {
         return itemList;
     }
 
-
-    public int GetTotalCostByItem(int id){
+    public int GetTotalPrice() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT quantity, price FROM "+ TABLE_NAME;
         Cursor cursor = db.rawQuery(query,null);
-        int totalCost = 0;
+        int totalPrice = 0;
         int quantity = 0;
         int price = 0;
 
-        if (cursor.moveToNext()){
+        while (cursor.moveToNext()){
             quantity = cursor.getInt(cursor.getColumnIndexOrThrow(COL4_QUANTITY));
             price = cursor.getInt(cursor.getColumnIndexOrThrow(COL5_PRICE));
+            int row_result = quantity * price;
+            totalPrice = totalPrice + row_result;
         }
-        totalCost = quantity * price;
-
         cursor.close();
-        return totalCost;
+        return totalPrice;
     }
 
-
-    public void DeleteItem(int id){
+    public void ClearCartItems(){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, COL1_ID +" = ?",new String[]{String.valueOf(id)});
+        db.delete(TABLE_NAME, null, null);
         db.close();
     }
+
+//    public int GetTotalCostByItem(int id){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        String query = "SELECT quantity, price FROM "+ TABLE_NAME;
+//        Cursor cursor = db.rawQuery(query,null);
+//        int totalCost = 0;
+//        int quantity = 0;
+//        int price = 0;
+//
+//        if (cursor.moveToNext()){
+//            quantity = cursor.getInt(cursor.getColumnIndexOrThrow(COL4_QUANTITY));
+//            price = cursor.getInt(cursor.getColumnIndexOrThrow(COL5_PRICE));
+//        }
+//        totalCost = quantity * price;
+//
+//        cursor.close();
+//        return totalCost;
+//    }
+//
+//
+//    public void DeleteItem(int id){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        db.delete(TABLE_NAME, COL1_ID +" = ?",new String[]{String.valueOf(id)});
+//        db.close();
+//    }
 
 
 }

@@ -22,8 +22,7 @@
             android:src="@mipmap/ic_launcher"
             android:layout_width="200dp"
             android:layout_height="150dp"
-            android:scaleType="fitXY"
-            android:contentDescription="TODO" />
+            android:scaleType="fitXY" />
 
         <TextView
             android:id="@+id/item1_categoryTv"
@@ -31,7 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:gravity="center_horizontal"
-            android:text="@string/categorytextview"
             android:textSize="14sp" />
 
 
@@ -41,7 +39,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:gravity="center_horizontal"
-            android:text="@string/nametextview"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -51,7 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="0dp"
             android:gravity="center_horizontal"
-            android:text="@string/pricetextview"
             android:textSize="14sp" />
 
     </LinearLayout>

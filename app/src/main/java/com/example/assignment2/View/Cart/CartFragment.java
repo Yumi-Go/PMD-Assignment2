@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,6 +25,9 @@ import java.util.HashMap;
 
 public class CartFragment extends Fragment {
 
+    ListView cartLv;
+    TextView totalPriceTv;
+    Button backBtn, clearBtn;
     MenuFragment fragmentMenu = new MenuFragment();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -32,13 +37,19 @@ public class CartFragment extends Fragment {
         itemDBhandler dbHandler = new itemDBhandler(getContext());
         ArrayList<HashMap<String, String>> itemList = dbHandler.GetItems();
 
-        ListView lv = (ListView) rootView.findViewById(R.id.cart_list);
+        cartLv = (ListView) rootView.findViewById(R.id.cart_list);
         ListAdapter adapter = new SimpleAdapter(getContext(), itemList,
                 R.layout.list_row,new String[]{"id","category","name", "quantity", "price"},
                 new int[]{R.id.id, R.id.category, R.id.name, R.id.quantity, R.id.price});
-        lv.setAdapter(adapter);
-        Button back = (Button) rootView.findViewById(R.id.btnBack);
-        back.setOnClickListener(new View.OnClickListener() {
+        cartLv.setAdapter(adapter);
+
+        totalPriceTv = rootView.findViewById(R.id.total_price);
+        int totalPrice = dbHandler.GetTotalPrice();
+
+        totalPriceTv.setText(totalPrice + " €");
+
+        backBtn = (Button) rootView.findViewById(R.id.btnBack);
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
@@ -47,6 +58,17 @@ public class CartFragment extends Fragment {
 //                Toast.makeText(requireActivity().getApplicationContext(), "Continue to add",Toast.LENGTH_SHORT).show();
 
             }
+        });
+
+        clearBtn = (Button) rootView.findViewById(R.id.btnClear);
+        clearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbHandler.ClearCartItems();
+                Toast.makeText(requireActivity().getApplicationContext(), "All deleted",Toast.LENGTH_SHORT).show();
+                cartLv.setAdapter(null);
+                int totalPrice = dbHandler.GetTotalPrice();
+                totalPriceTv.setText(totalPrice + " €");            }
         });
 
         return rootView;

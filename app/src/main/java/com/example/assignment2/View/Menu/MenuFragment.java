@@ -49,10 +49,10 @@ public class MenuFragment extends Fragment {
         viewPager.setAdapter(adapter);
 
         tabTitles = new ArrayList<>();
-        tabTitles.add("Pizza");
-        tabTitles.add("Deal");
-        tabTitles.add("Side");
-        tabTitles.add("Drink");
+        tabTitles.add(getString(R.string.pizza));
+        tabTitles.add(getString(R.string.deal));
+        tabTitles.add(getString(R.string.side));
+        tabTitles.add(getString(R.string.drink));
 
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.setText(tabTitles.get(position))).attach();
 

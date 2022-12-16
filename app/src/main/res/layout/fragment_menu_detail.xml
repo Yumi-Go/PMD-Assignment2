@@ -49,32 +49,36 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center">
-
             <Button
-                android:id="@+id/btn_plus"
+                android:id="@+id/btnMinus"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="+" />
-
+                android:text="-" />
             <TextView
                 android:id="@+id/quantityTv"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="" />
-
             <Button
-                android:id="@+id/btn_minus"
+                android:id="@+id/btnPlus"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="-" />
+                android:text="+" />
+
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_add"
+            android:id="@+id/btnAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add to Cart" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
 
 
     </LinearLayout>
