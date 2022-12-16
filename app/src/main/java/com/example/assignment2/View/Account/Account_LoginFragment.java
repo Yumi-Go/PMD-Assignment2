@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.assignment2.Presenter.DBhandler;
+import com.example.assignment2.Presenter.userDBhandler;
 import com.example.assignment2.R;
 
 
@@ -42,7 +42,7 @@ public class Account_LoginFragment extends Fragment {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBhandler dbHandler = new DBhandler(getContext());
+                userDBhandler dbHandler = new userDBhandler(getContext());
                 boolean isExist = dbHandler.checkUserExist(emailEditText.getText().toString(), passwordEditText.getText().toString());
                 if(isExist){
                     Bundle bundle = new Bundle();

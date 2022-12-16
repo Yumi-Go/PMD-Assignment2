@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.assignment2.Presenter.DBhandler;
+import com.example.assignment2.Presenter.userDBhandler;
 import com.example.assignment2.R;
 
 
@@ -46,7 +46,7 @@ public class Account_RegisterFragment extends Fragment {
                 String name = nameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
-                DBhandler dbHandler = new DBhandler(getContext());
+                userDBhandler dbHandler = new userDBhandler(getContext());
                 dbHandler.insertUser(name, email, password);
                 FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
 

@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.assignment2.Presenter.DBhandler;
+import com.example.assignment2.Presenter.userDBhandler;
 import com.example.assignment2.R;
 
 
@@ -29,7 +29,7 @@ public class Account_AfterLoginFragment extends Fragment {
 
         nameTextView = rootView.findViewById(R.id.nameTv);
 
-        DBhandler dbHandler = new DBhandler(getContext());
+        userDBhandler dbHandler = new userDBhandler(getContext());
 
         if (getArguments() != null)
         {

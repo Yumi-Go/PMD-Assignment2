@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DBhandler extends SQLiteOpenHelper {
+public class userDBhandler extends SQLiteOpenHelper {
 
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "usersdb";
@@ -19,7 +19,7 @@ public class DBhandler extends SQLiteOpenHelper {
     private static final String COL3_EMAIL = "email";
     private static final String COL4_PASSWORD = "password";
 
-    public DBhandler(Context context){
+    public userDBhandler(Context context){
         super(context,DB_NAME, null, DB_VERSION);
     }
 

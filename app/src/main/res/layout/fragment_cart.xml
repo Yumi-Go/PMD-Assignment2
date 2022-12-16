@@ -1,53 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="top|center_horizontal"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".View.Cart.CartFragment">
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/transMap"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        tools:context=".View.Cart.CartFragment" />
-
-    <Button
-        android:id="@+id/btn_reset_marker"
-        android:layout_width="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <ListView
+        android:id="@+id/cart_list"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:text="@string/reset_marker"
-        android:textColor="@color/white" />
-
+        android:dividerHeight="1dp" />
     <Button
-        android:id="@+id/btn_googleMap"
-        android:layout_width="match_parent"
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:text= "@string/google_map"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/btn_bus"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/dark_orange"
-        android:text="@string/bus"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/btn_subway"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/dark_orange"
-        android:text="@string/subway"
-        android:textSize="20sp" />
-
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Back" />
 </LinearLayout>
-
-

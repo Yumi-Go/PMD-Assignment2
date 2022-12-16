@@ -7,19 +7,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.assignment2.Model.MenuRecyclerItem;
+import com.example.assignment2.Presenter.itemDBhandler;
+import com.example.assignment2.Presenter.userDBhandler;
 import com.example.assignment2.R;
-import com.google.android.gms.maps.GoogleMap;
 
 
 public class MenuDetailFragment extends Fragment {
 
-    String category, name, price, description;
-    int image, quantity;
-    Button btnPlus, btnMinus;
+    String category, name, stringPrice, description;
+    int id, image, quantity, intPrice;
+    Button btnPlus, btnMinus, btnAdd;
     MenuRecyclerItem item;
     ImageView introImageView;
     TextView nameTextView, priceTextView, descriptionTextView, quantityTextView;
@@ -40,7 +42,8 @@ public class MenuDetailFragment extends Fragment {
 
         name = item.getName();
         category = item.getCategory();
-        price = item.priceToString(item.getPrice());
+        intPrice = item.getPrice();
+        stringPrice = item.priceToString(intPrice);
         image = item.getImage();
         description = item.getDescription();
 
@@ -48,8 +51,14 @@ public class MenuDetailFragment extends Fragment {
         priceTextView = rootView.findViewById(R.id.priceTv);
         introImageView = rootView.findViewById(R.id.introIv);
         descriptionTextView = rootView.findViewById(R.id.descriptionTv);
-        quantityTextView = rootView.findViewById(R.id.quantityTv);
+
+        nameTextView.setText(name);
+        priceTextView.setText(stringPrice);
+        introImageView.setImageResource(image);
+        descriptionTextView.setText(description);
+
         btnPlus = rootView.findViewById(R.id.btn_plus);
+        quantityTextView = rootView.findViewById(R.id.quantityTv);
         btnMinus = rootView.findViewById(R.id.btn_minus);
 
         quantity = 0;
@@ -72,11 +81,20 @@ public class MenuDetailFragment extends Fragment {
             }
         });
 
-        nameTextView.setText(name);
-        priceTextView.setText(price);
-        introImageView.setImageResource(image);
+        btnAdd = rootView.findViewById(R.id.btn_add);
 
-        descriptionTextView.setText(description);
+        itemDBhandler dbHandler = new itemDBhandler(getContext());
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (quantity > 0) {
+                    dbHandler.insertItem(category, name, quantity, intPrice);
+                    Toast.makeText(requireActivity().getApplicationContext(), "Added to cart successfully",Toast.LENGTH_LONG).show();
+
+
+                }
+            }
+        });
 
 
 
