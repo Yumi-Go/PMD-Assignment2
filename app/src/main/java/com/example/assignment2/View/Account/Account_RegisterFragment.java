@@ -19,7 +19,7 @@ import com.example.assignment2.R;
 public class Account_RegisterFragment extends Fragment {
 
     private static final String TAG = "RegisterFragment";
-    EditText nameEditText, emailEditText, passwordEditText, passwordCheckEditText;
+    EditText nameEditText, emailEditText, passwordEditText;
     AccountFragment fragmentAccount = new AccountFragment();
 
     @Override
@@ -35,10 +35,6 @@ public class Account_RegisterFragment extends Fragment {
         nameEditText = rootView.findViewById(R.id.et_name);
         emailEditText = rootView.findViewById(R.id.et_email);
         passwordEditText = rootView.findViewById(R.id.et_password);
-        passwordCheckEditText = rootView.findViewById(R.id.et_pw_check);
-
-
-
 
         Button btnRegister = rootView.findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +44,6 @@ public class Account_RegisterFragment extends Fragment {
                 String name = nameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
-                String passwordCheck = passwordCheckEditText.getText().toString();
 
                 userDBhandler dbHandler = new userDBhandler(getContext());
                 dbHandler.insertUser(name, email, password);
@@ -61,7 +56,6 @@ public class Account_RegisterFragment extends Fragment {
                 nameEditText.setText(null);
                 emailEditText.setText(null);
                 passwordEditText.setText(null);
-                passwordCheckEditText.setText(null);
 
             }
         });

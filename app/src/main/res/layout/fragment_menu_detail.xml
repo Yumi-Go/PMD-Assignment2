@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="Price" />
+            android:text="@string/price" />
 
         <ImageView
             android:id="@+id/introIv"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:text="TextView" />
+            android:text="" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                 android:id="@+id/btnMinus"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="-" />
+                android:text="@string/minus" />
             <TextView
                 android:id="@+id/quantityTv"
                 android:layout_width="50dp"
@@ -64,7 +64,7 @@
                 android:id="@+id/btnPlus"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="+" />
+                android:text="@string/plus" />
 
         </LinearLayout>
 
@@ -72,7 +72,7 @@
             android:id="@+id/btnAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add to Cart" />
+            android:text="@string/add_to_cart" />
 
         <Button
             android:id="@+id/btnBack"

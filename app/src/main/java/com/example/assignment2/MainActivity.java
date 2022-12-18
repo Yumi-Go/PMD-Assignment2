@@ -25,7 +25,6 @@ import java.util.Stack;
 public class MainActivity extends AppCompatActivity {
 
     private int num_page = 4;
-//    static List<RecyclerItem> itemsList = new ArrayList<>();
 
     public static Stack<Fragment> fragmentStack;
 
@@ -91,18 +90,6 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
-//        switch (item.getItemId ()) {
-//            case R.id.item1:
-////                startActivity (new Intent(this, MainActivity2.class));
-//                return true;
-//            case R.id.item2:
-//                return true;
-//            case R.id.item3:
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
     }
 
     class ItemSelectedListener implements BottomNavigationView.OnItemSelectedListener {
@@ -128,20 +115,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
-
-
-//    @Override
-//    public void onBackPressed(){
-////        Toast.makeText(this, "no way", Toast.LENGTH_SHORT).show();
-//        if (!fragmentStack.isEmpty()) {
-//            Fragment nextFragment = fragmentStack.pop();
-//            fragmentManager.beginTransaction().replace(R.id.frame_layout, nextFragment).commit();
-//            System.out.println("[TESTING >>] " + fragmentStack.size());
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-
 
 
 }
