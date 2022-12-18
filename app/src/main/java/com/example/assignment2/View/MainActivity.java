@@ -1,4 +1,4 @@
-package com.example.assignment2;
+package com.example.assignment2.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.assignment2.R;
 import com.example.assignment2.View.Account.AccountFragment;
 import com.example.assignment2.View.Cart.CartFragment;
 import com.example.assignment2.View.Home.HomeFragment;

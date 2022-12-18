@@ -9,14 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.example.assignment2.MainActivity;
+import com.example.assignment2.View.MainActivity;
 import com.example.assignment2.Presenter.userDBhandler;
 import com.example.assignment2.R;
-import com.example.assignment2.View.Home.HomeFragment;
-import com.example.assignment2.View.Menu.MenuFragment;
 
 import java.util.Locale;
 
